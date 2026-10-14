@@ -1,0 +1,199 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Difficulties of pet ownership in 2022 and 2025",
+  "data": {
+    "url": "data/difficulties.csv"
+  },
+  "width": "container",
+  "height": {
+    "step": 50
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 4,
+        "color": "#e2dccf"
+      },
+      "encoding": {
+        "y": {
+          "field": "difficulty",
+          "type": "nominal",
+          "sort": null,
+          "axis": {
+            "title": null,
+            "labelLimit": 340,
+            "labelFontSize": 13,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "x": {
+          "field": "2022",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              40
+            ]
+          },
+          "axis": {
+            "title": "Owners naming this as a top-three difficulty (%)",
+            "grid": true,
+            "gridColor": "#e8e2d6",
+            "tickCount": 6
+          }
+        },
+        "x2": {
+          "field": "2025"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "fold": [
+            "2022",
+            "2025"
+          ],
+          "as": [
+            "series",
+            "value"
+          ]
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 170,
+        "opacity": 1
+      },
+      "encoding": {
+        "y": {
+          "field": "difficulty",
+          "type": "nominal",
+          "sort": null,
+          "axis": {
+            "title": null,
+            "labelLimit": 340,
+            "labelFontSize": 13,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "x": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "series",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "2022",
+              "2025"
+            ],
+            "range": [
+              "#D9A441",
+              "#2b2a26"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "top",
+            "symbolSize": 170
+          }
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "calculate": "min(datum['2022'], datum['2025'])",
+          "as": "lo"
+        },
+        {
+          "calculate": "max(datum['2022'], datum['2025'])",
+          "as": "hi"
+        },
+        {
+          "calculate": "datum.lo + '%'",
+          "as": "lab"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -11,
+        "fontSize": 12,
+        "color": "#2b2a26"
+      },
+      "encoding": {
+        "y": {
+          "field": "difficulty",
+          "type": "nominal",
+          "sort": null,
+          "axis": {
+            "title": null,
+            "labelLimit": 340,
+            "labelFontSize": 13,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "x": {
+          "field": "lo",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "lab",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "calculate": "min(datum['2022'], datum['2025'])",
+          "as": "lo"
+        },
+        {
+          "calculate": "max(datum['2022'], datum['2025'])",
+          "as": "hi"
+        },
+        {
+          "calculate": "datum.hi + '%'",
+          "as": "lab"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 11,
+        "fontSize": 12,
+        "color": "#2b2a26"
+      },
+      "encoding": {
+        "y": {
+          "field": "difficulty",
+          "type": "nominal",
+          "sort": null,
+          "axis": {
+            "title": null,
+            "labelLimit": 340,
+            "labelFontSize": 13,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "x": {
+          "field": "hi",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "lab",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

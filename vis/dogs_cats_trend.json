@@ -1,0 +1,109 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Share of households with a dog or a cat",
+  "data": {
+    "url": "data/dogs_cats_trend.csv"
+  },
+  "width": "container",
+  "height": 300,
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          2018.5,
+          2027.2
+        ]
+      },
+      "axis": {
+        "values": [
+          2019,
+          2022,
+          2025
+        ],
+        "format": "d",
+        "title": null,
+        "grid": false
+      }
+    },
+    "y": {
+      "field": "percent",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          0,
+          60
+        ]
+      },
+      "axis": {
+        "title": "Households with this pet (%)"
+      }
+    },
+    "color": {
+      "field": "pet",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Dogs",
+          "Cats"
+        ],
+        "range": [
+          "#C76B4E",
+          "#234B3A"
+        ]
+      },
+      "legend": null
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 100,
+        "opacity": 1
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dy": -14,
+        "fontSize": 13,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "percent",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year == 2025"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 22,
+        "fontSize": 15,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "pet",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

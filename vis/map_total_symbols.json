@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 380,
+  "projection": {
+    "type": "mercator"
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": null
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/council_boundaries.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#F2EEE7",
+        "stroke": "#9CA89D",
+        "strokeWidth": 0.8
+      }
+    },
+    {
+      "data": {
+        "url": "data/suburb_map_points.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "opacity": 0.62,
+        "stroke": "#ffffff",
+        "strokeWidth": 0.4
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "total",
+          "type": "quantitative",
+          "title": "Registered records",
+          "scale": {
+            "range": [
+              12,
+              1100
+            ]
+          }
+        },
+        "color": {
+          "value": "#C76B4E"
+        },
+        "tooltip": [
+          {
+            "field": "council",
+            "title": "Council"
+          },
+          {
+            "field": "suburb",
+            "title": "Suburb"
+          },
+          {
+            "field": "total",
+            "title": "Records",
+            "format": ","
+          },
+          {
+            "field": "Cat",
+            "title": "Cats"
+          },
+          {
+            "field": "Dog",
+            "title": "Dogs"
+          }
+        ]
+      }
+    }
+  ],
+  "title": "Which suburbs record the most cats and dogs?"
+}

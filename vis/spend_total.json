@@ -1,0 +1,154 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Estimated yearly spending on pets, 2022 and 2025",
+  "data": {
+    "url": "data/spend_total.csv"
+  },
+  "width": "container",
+  "height": {
+    "step": 70
+  },
+  "transform": [
+    {
+      "calculate": "indexof(['Dogs','Cats','All other pets'], datum.group)",
+      "as": "ord"
+    },
+    {
+      "stack": "billions",
+      "groupby": [
+        "year"
+      ],
+      "sort": [
+        {
+          "field": "ord",
+          "order": "ascending"
+        }
+      ],
+      "as": [
+        "x0",
+        "x1"
+      ]
+    },
+    {
+      "calculate": "(datum.x0 + datum.x1) / 2",
+      "as": "mid"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "year",
+      "type": "ordinal",
+      "axis": {
+        "title": null,
+        "labelFontSize": 15,
+        "labelFontWeight": "bold"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "height": {
+          "band": 0.78
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "x0",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              24
+            ]
+          },
+          "axis": {
+            "title": "Billions of dollars a year",
+            "format": "$.0f",
+            "gridColor": "#e8e2d6",
+            "tickCount": 6
+          }
+        },
+        "x2": {
+          "field": "x1"
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal",
+          "sort": [
+            "Dogs",
+            "Cats",
+            "All other pets"
+          ],
+          "scale": {
+            "domain": [
+              "Dogs",
+              "Cats",
+              "All other pets"
+            ],
+            "range": [
+              "#C76B4E",
+              "#234B3A",
+              "#D9A441"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "top"
+          }
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.billions > 3"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "color": "white",
+        "fontWeight": "bold",
+        "fontSize": 13
+      },
+      "encoding": {
+        "x": {
+          "field": "mid",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "billions",
+          "type": "quantitative",
+          "format": "$.1f"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.group == 'All other pets'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "fontSize": 15,
+        "fontWeight": "bold",
+        "color": "#2b2a26"
+      },
+      "encoding": {
+        "x": {
+          "field": "x1",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "x1",
+          "type": "quantitative",
+          "format": "$.1f"
+        }
+      }
+    }
+  ]
+}

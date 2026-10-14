@@ -1,0 +1,124 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Share of Australian households with a pet",
+  "data": {
+    "url": "data/households_with_pets.csv"
+  },
+  "width": "container",
+  "height": 300,
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "color": "#2b2a26",
+        "strokeWidth": 3
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "color": "#2b2a26",
+        "size": 110,
+        "opacity": 1
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dy": -16,
+        "fontSize": 15,
+        "fontWeight": "bold",
+        "color": "#2b2a26"
+      },
+      "encoding": {
+        "text": {
+          "field": "percent",
+          "type": "quantitative",
+          "format": ".0f"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dy": 24,
+        "fontSize": 12,
+        "color": "#5b574d"
+      },
+      "transform": [
+        {
+          "calculate": "format(datum.households_m,'.1f') + 'm homes'",
+          "as": "lab"
+        }
+      ],
+      "encoding": {
+        "text": {
+          "field": "lab",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "year": 2020.5,
+            "percent": 56.5,
+            "t": "Pandemic years: about one million more homes got a pet"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 12,
+        "fontStyle": "italic",
+        "color": "#5b574d"
+      },
+      "encoding": {
+        "text": {
+          "field": "t",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          2014.6,
+          2025.8
+        ]
+      },
+      "axis": {
+        "values": [
+          2016,
+          2019,
+          2022,
+          2025
+        ],
+        "format": "d",
+        "title": null,
+        "grid": false
+      }
+    },
+    "y": {
+      "field": "percent",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          50,
+          80
+        ]
+      },
+      "axis": {
+        "title": "Homes with a pet (%) - axis starts at 50",
+        "tickCount": 4
+      }
+    }
+  }
+}

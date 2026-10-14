@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Each square is 250,000 pets in Australia, 2025",
+  "data": {
+    "url": "data/pets_units.csv"
+  },
+  "width": {
+    "step": 24
+  },
+  "height": {
+    "step": 24
+  },
+  "mark": {
+    "type": "square",
+    "size": 380,
+    "opacity": 1
+  },
+  "encoding": {
+    "x": {
+      "field": "x",
+      "type": "ordinal",
+      "axis": null
+    },
+    "y": {
+      "field": "y",
+      "type": "ordinal",
+      "axis": null
+    },
+    "color": {
+      "field": "label",
+      "type": "nominal",
+      "sort": {
+        "field": "y",
+        "op": "min"
+      },
+      "scale": {
+        "range": [
+          "#6f9a86",
+          "#C76B4E",
+          "#234B3A",
+          "#D9A441",
+          "#8a6f4d",
+          "#a8b89a",
+          "#b9b2a4"
+        ]
+      },
+      "legend": {
+        "title": null,
+        "orient": "bottom",
+        "columns": 4,
+        "symbolType": "square",
+        "labelFontSize": 13
+      }
+    }
+  }
+}

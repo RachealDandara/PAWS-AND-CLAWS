@@ -1,0 +1,95 @@
+category,pet,pet_label,dollars
+Food,Dogs,"Dogs
+$2,520",1090
+Food,Cats,"Cats
+$1,656",884
+Food,Fish,"Fish
+$475",172
+Food,Birds,"Birds
+$555",285
+Food,Small mammals,"Small mammals
+$2,095",947
+Food,Reptiles,"Reptiles
+$1,319",354
+Veterinary services,Dogs,"Dogs
+$2,520",168
+Veterinary services,Cats,"Cats
+$1,656",154
+Veterinary services,Fish,"Fish
+$475",92
+Veterinary services,Birds,"Birds
+$555",82
+Veterinary services,Small mammals,"Small mammals
+$2,095",240
+Veterinary services,Reptiles,"Reptiles
+$1,319",692
+Products or accessories,Dogs,"Dogs
+$2,520",117
+Products or accessories,Cats,"Cats
+$1,656",87
+Products or accessories,Fish,"Fish
+$475",123
+Products or accessories,Birds,"Birds
+$555",95
+Products or accessories,Small mammals,"Small mammals
+$2,095",539
+Products or accessories,Reptiles,"Reptiles
+$1,319",175
+Pet insurance,Dogs,"Dogs
+$2,520",145
+Pet insurance,Cats,"Cats
+$1,656",70
+"Flea, worming and tick treatments",Dogs,"Dogs
+$2,520",122
+"Flea, worming and tick treatments",Cats,"Cats
+$1,656",102
+Dietary supplements,Dogs,"Dogs
+$2,520",124
+Dietary supplements,Cats,"Cats
+$1,656",84
+Clipping and grooming,Dogs,"Dogs
+$2,520",139
+Clipping and grooming,Cats,"Cats
+$1,656",58
+Training and behaviour,Dogs,"Dogs
+$2,520",117
+Training and behaviour,Cats,"Cats
+$1,656",61
+Competitions and memberships,Dogs,"Dogs
+$2,520",97
+Competitions and memberships,Cats,"Cats
+$1,656",19
+Competitions and memberships,Fish,"Fish
+$475",49
+Competitions and memberships,Birds,"Birds
+$555",32
+Competitions and memberships,Small mammals,"Small mammals
+$2,095",77
+Competitions and memberships,Reptiles,"Reptiles
+$1,319",24
+Veterinary medicines,Dogs,"Dogs
+$2,520",102
+Veterinary medicines,Cats,"Cats
+$1,656",45
+Walking,Dogs,"Dogs
+$2,520",119
+Alternative healthcare,Dogs,"Dogs
+$2,520",84
+Alternative healthcare,Cats,"Cats
+$1,656",35
+Boarding and minding,Dogs,"Dogs
+$2,520",46
+Boarding and minding,Cats,"Cats
+$1,656",34
+Transport,Dogs,"Dogs
+$2,520",50
+Transport,Cats,"Cats
+$1,656",21
+Pet healthcare products,Fish,"Fish
+$475",35
+Pet healthcare products,Birds,"Birds
+$555",61
+Pet healthcare products,Small mammals,"Small mammals
+$2,095",292
+Pet healthcare products,Reptiles,"Reptiles
+$1,319",73

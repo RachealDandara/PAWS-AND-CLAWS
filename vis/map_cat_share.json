@@ -1,0 +1,80 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 380,
+  "projection": {
+    "type": "mercator"
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": null
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/council_boundaries.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#F2EEE7",
+        "stroke": "#9CA89D",
+        "strokeWidth": 0.8
+      }
+    },
+    {
+      "data": {
+        "url": "data/suburb_pet_boundaries.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.25
+      },
+      "encoding": {
+        "color": {
+          "field": "properties.cat_share",
+          "type": "quantitative",
+          "title": "Cat share (%)",
+          "scale": {
+            "scheme": "yellowgreenblue"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "properties.council",
+            "title": "Council"
+          },
+          {
+            "field": "properties.suburb",
+            "title": "Suburb"
+          },
+          {
+            "field": "properties.Cat",
+            "title": "Cats",
+            "format": ","
+          },
+          {
+            "field": "properties.Dog",
+            "title": "Dogs",
+            "format": ","
+          },
+          {
+            "field": "properties.cat_share",
+            "title": "Cat share (%)"
+          }
+        ]
+      }
+    }
+  ],
+  "title": "Where are cats more common among registered pets?"
+}
