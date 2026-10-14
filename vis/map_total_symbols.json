@@ -1,90 +1,328 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container",
-  "height": 380,
-  "projection": {
-    "type": "mercator"
+  "description": "Three independently fitted council maps; each uses official ABS boundaries.",
+  "hconcat": [
+    {
+      "width": 270,
+      "height": 310,
+      "title": {
+        "text": "Townsville \u00b7 QLD",
+        "fontSize": 14,
+        "anchor": "middle"
+      },
+      "projection": {
+        "type": "mercator"
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "data/council_boundaries.geojson",
+            "format": {
+              "type": "json",
+              "property": "features"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#F2EEE7",
+            "stroke": "#9CA89D",
+            "strokeWidth": 0.8
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "properties.council",
+                "equal": "Townsville City Council"
+              }
+            }
+          ]
+        },
+        {
+          "data": {
+            "url": "data/suburb_map_points.csv"
+          },
+          "mark": {
+            "type": "circle",
+            "opacity": 0.62,
+            "stroke": "#ffffff",
+            "strokeWidth": 0.4
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "total",
+              "type": "quantitative",
+              "title": "Registered records",
+              "scale": {
+                "range": [
+                  12,
+                  1100
+                ]
+              }
+            },
+            "color": {
+              "value": "#C76B4E"
+            },
+            "tooltip": [
+              {
+                "field": "council",
+                "title": "Council"
+              },
+              {
+                "field": "suburb",
+                "title": "Suburb"
+              },
+              {
+                "field": "total",
+                "title": "Records",
+                "format": ","
+              },
+              {
+                "field": "Cat",
+                "title": "Cats"
+              },
+              {
+                "field": "Dog",
+                "title": "Dogs"
+              }
+            ]
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "council",
+                "equal": "Townsville City Council"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 270,
+      "height": 310,
+      "title": {
+        "text": "Golden Plains \u00b7 VIC",
+        "fontSize": 14,
+        "anchor": "middle"
+      },
+      "projection": {
+        "type": "mercator"
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "data/council_boundaries.geojson",
+            "format": {
+              "type": "json",
+              "property": "features"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#F2EEE7",
+            "stroke": "#9CA89D",
+            "strokeWidth": 0.8
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "properties.council",
+                "equal": "Golden Plains Shire"
+              }
+            }
+          ]
+        },
+        {
+          "data": {
+            "url": "data/suburb_map_points.csv"
+          },
+          "mark": {
+            "type": "circle",
+            "opacity": 0.62,
+            "stroke": "#ffffff",
+            "strokeWidth": 0.4
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "total",
+              "type": "quantitative",
+              "title": "Registered records",
+              "scale": {
+                "range": [
+                  12,
+                  1100
+                ]
+              }
+            },
+            "color": {
+              "value": "#C76B4E"
+            },
+            "tooltip": [
+              {
+                "field": "council",
+                "title": "Council"
+              },
+              {
+                "field": "suburb",
+                "title": "Suburb"
+              },
+              {
+                "field": "total",
+                "title": "Records",
+                "format": ","
+              },
+              {
+                "field": "Cat",
+                "title": "Cats"
+              },
+              {
+                "field": "Dog",
+                "title": "Dogs"
+              }
+            ]
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "council",
+                "equal": "Golden Plains Shire"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 270,
+      "height": 310,
+      "title": {
+        "text": "Surf Coast \u00b7 VIC",
+        "fontSize": 14,
+        "anchor": "middle"
+      },
+      "projection": {
+        "type": "mercator"
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "data/council_boundaries.geojson",
+            "format": {
+              "type": "json",
+              "property": "features"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#F2EEE7",
+            "stroke": "#9CA89D",
+            "strokeWidth": 0.8
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "properties.council",
+                "equal": "Surf Coast Shire"
+              }
+            }
+          ]
+        },
+        {
+          "data": {
+            "url": "data/suburb_map_points.csv"
+          },
+          "mark": {
+            "type": "circle",
+            "opacity": 0.62,
+            "stroke": "#ffffff",
+            "strokeWidth": 0.4
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "total",
+              "type": "quantitative",
+              "title": "Registered records",
+              "scale": {
+                "range": [
+                  12,
+                  1100
+                ]
+              }
+            },
+            "color": {
+              "value": "#C76B4E"
+            },
+            "tooltip": [
+              {
+                "field": "council",
+                "title": "Council"
+              },
+              {
+                "field": "suburb",
+                "title": "Suburb"
+              },
+              {
+                "field": "total",
+                "title": "Records",
+                "format": ","
+              },
+              {
+                "field": "Cat",
+                "title": "Cats"
+              },
+              {
+                "field": "Dog",
+                "title": "Dogs"
+              }
+            ]
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "council",
+                "equal": "Surf Coast Shire"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "spacing": 14,
+  "resolve": {
+    "scale": {
+      "color": "shared",
+      "size": "shared"
+    }
   },
   "config": {
     "view": {
       "stroke": null
     },
     "background": null
-  },
-  "layer": [
-    {
-      "data": {
-        "url": "data/council_boundaries.geojson",
-        "format": {
-          "type": "json",
-          "property": "features"
-        }
-      },
-      "mark": {
-        "type": "geoshape",
-        "fill": "#F2EEE7",
-        "stroke": "#9CA89D",
-        "strokeWidth": 0.8
-      }
-    },
-    {
-      "data": {
-        "url": "data/suburb_map_points.csv"
-      },
-      "mark": {
-        "type": "circle",
-        "opacity": 0.62,
-        "stroke": "#ffffff",
-        "strokeWidth": 0.4
-      },
-      "encoding": {
-        "longitude": {
-          "field": "lon",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "lat",
-          "type": "quantitative"
-        },
-        "size": {
-          "field": "total",
-          "type": "quantitative",
-          "title": "Registered records",
-          "scale": {
-            "range": [
-              12,
-              1100
-            ]
-          }
-        },
-        "color": {
-          "value": "#C76B4E"
-        },
-        "tooltip": [
-          {
-            "field": "council",
-            "title": "Council"
-          },
-          {
-            "field": "suburb",
-            "title": "Suburb"
-          },
-          {
-            "field": "total",
-            "title": "Records",
-            "format": ","
-          },
-          {
-            "field": "Cat",
-            "title": "Cats"
-          },
-          {
-            "field": "Dog",
-            "title": "Dogs"
-          }
-        ]
-      }
-    }
-  ],
-  "title": "Which suburbs record the most cats and dogs?"
+  }
 }
