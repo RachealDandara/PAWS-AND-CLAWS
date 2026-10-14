@@ -1,0 +1,108 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Council map fitted to its own boundary; each uses official ABS boundaries.",
+  "width": 270,
+  "height": 310,
+  "title": {
+    "text": "Townsville · QLD",
+    "fontSize": 14,
+    "anchor": "middle"
+  },
+  "projection": {
+    "type": "mercator",
+    "scale": 14304,
+    "translate": [
+      -36473.1,
+      -4771.1
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/council_boundaries.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#F2EEE7",
+        "stroke": "#9CA89D",
+        "strokeWidth": 0.8
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "properties.council",
+            "equal": "Townsville City Council"
+          }
+        }
+      ]
+    },
+    {
+      "data": {
+        "url": "data/illustrative_pet_dots.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "size": 16,
+        "opacity": 0.85
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "type",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Cat",
+              "Dog"
+            ],
+            "range": [
+              "#C76B4E",
+              "#234B3A"
+            ]
+          },
+          "title": [
+            "Animal",
+            "1 dot ≈ 50 records"
+          ],
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "council"
+          },
+          {
+            "field": "suburb"
+          },
+          {
+            "field": "type"
+          }
+        ]
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "council",
+            "equal": "Townsville City Council"
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": null
+  }
+}

@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Paws &amp; Claws: Australia's Love Affair with Pets</title>
+  <meta name="author" content="Racheal Dandara">
   <meta name="description" content="How Australia became a nation of pet owners, and what it costs.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,9 +42,9 @@
       <h2>From tropical Queensland to coastal Victoria</h2>
       <p>Three local councils show how recorded pet registrations vary geographically. These are <strong>administrative records, not estimates of pet ownership</strong>. Townsville includes cat approvals and dog registrations (March 2026); Surf Coast includes registered records only; Golden Plains records have no registration-status filter. Different rules and reporting dates mean totals should not be treated as directly comparable ownership rates.</p>
       <div class="map-grid">
-        <figure><figcaption>Map 1 · Proportional symbols — registrations by suburb (three council panels)</figcaption><div class="chart" data-spec="map_total_symbols"></div><p class="src">Circle area represents the number of recorded cats and dogs in each matched suburb. Suburb markers are placed at representative points, not animal addresses.</p></figure>
-        <figure><figcaption>Map 2 · Choropleth — percentage of records that are cats (three council panels)</figcaption><div class="chart" data-spec="map_cat_share"></div><p class="src">Cat records divided by cat and dog records within each source; not the share of households owning cats.</p></figure>
-        <figure><figcaption>Map 3 · Illustrative dot-density map (three council panels)</figcaption><div class="chart" data-spec="map_dogs_symbols"></div><p class="src">Each dot represents approximately 250 recorded animals, randomly placed within the matching suburb polygon. <strong>Dots do not show real pet locations.</strong> Only suburbs matched to ABS 2021 locality boundaries are displayed.</p></figure>
+        <figure><figcaption>Map 1 · Proportional symbols — registrations by suburb (three council panels)</figcaption><div class="map-row"><div class="chart" data-spec="map_total_symbols_townsville"></div><div class="chart" data-spec="map_total_symbols_golden_plains"></div><div class="chart" data-spec="map_total_symbols_surf_coast"></div></div><p class="src">Circle area represents the number of recorded cats and dogs in each matched suburb. Suburb markers are placed at representative points, not animal addresses. Each council is zoomed to fit, so the three maps are not drawn to the same scale; circle sizes are comparable.</p></figure>
+        <figure><figcaption>Map 2 · Choropleth — percentage of records that are cats (three council panels)</figcaption><div class="map-row"><div class="chart" data-spec="map_cat_share_townsville"></div><div class="chart" data-spec="map_cat_share_golden_plains"></div><div class="chart" data-spec="map_cat_share_surf_coast"></div></div><p class="src">Cat records divided by cat and dog records within each council's data; not the share of households owning cats. <strong>Grey suburbs have fewer than 20 records</strong>, too few for a reliable percentage. Each council is zoomed to fit, so the three maps are not drawn to the same scale.</p></figure>
+        <figure><figcaption>Map 3 · Illustrative dot-density map (three council panels)</figcaption><div class="map-row"><div class="chart" data-spec="map_dot_density_townsville"></div><div class="chart" data-spec="map_dot_density_golden_plains"></div><div class="chart" data-spec="map_dot_density_surf_coast"></div></div><p class="src">Each dot represents about 50 recorded animals, randomly placed within the matching suburb polygon. <strong>Dots do not show real pet locations.</strong> Only suburbs matched to ABS 2021 locality boundaries are displayed.</p></figure>
       </div>
       <p class="src">Sources: <a href="https://data.gov.au/data/dataset/6d43565d-51a9-4e66-aef4-6bdb7b2abb9d">Townsville City Council animal registrations</a>; <a href="https://data.gov.au/">Surf Coast Shire Registered Animals</a>; <a href="https://data.gov.au/data/dataset/animal-registrations">Golden Plains Shire Animal Registrations</a>. Source CSV summaries are included in the <code>data</code> folder. Boundaries: ABS Local Government Areas 2025 and Suburbs and Localities 2021 (GDA94). Counts reflect council registration/approval records, not all pet ownership. Unmatched suburb names are omitted from suburb-level maps; council totals should not be inferred from the map. Source dates and registration definitions differ.</p>
     </div>
@@ -150,13 +151,13 @@
 <footer>
   <div class="wrap">
     <h2>About this page</h2>
-    <p>Created by [Your name] for FIT3179 Data Visualisation 2, Monash University, October 2026.</p>
+    <p>Created by Racheal Dandara for FIT3179 Data Visualisation 2, Monash University, October 2026.</p>
     <ul>
       <li>Main data: Animal Medicines Australia, <a href="https://animalmedicinesaustralia.org.au/resources/pets-in-australia-a-national-survey-of-pets-and-people-3/"><em>Pets in Australia: A national survey of pets and people</em></a> (2025), research by SEC Newgate Research.</li>
       <li>Population and household estimates: Australian Bureau of Statistics, as cited in the AMA report.</li>
       <li>Geographic case studies: Townsville City Council, Surf Coast Shire and Golden Plains Shire (source data linked above).</li>
       <li>Charts are built with <a href="https://vega.github.io/vega-lite/">Vega-Lite</a>. The JSON for each chart is in the <code>vis</code> folder of this repository.</li>
-      <li>AI acknowledgement: [describe how you used AI tools, for example "Claude (Anthropic) helped draft the page code and text. I checked all figures against the source report."]</li>
+      <li>AI acknowledgement: Claude (Anthropic) was used to help write the page code, the Vega-Lite chart specifications and the page text. All data comes from the sources listed above.</li>
     </ul>
   </div>
 </footer>
