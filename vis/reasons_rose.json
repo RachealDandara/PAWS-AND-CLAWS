@@ -1,16 +1,16 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Top reasons for getting each type of pet (rose charts; wedge area is proportional to percent)",
+  "description": "Four reported leading reasons per pet, distributed around a full circle; wedge area represents reported percentage, not slices of a whole.",
   "data": {
     "url": "data/reasons_for_getting_pet.csv"
   },
   "transform": [
     {
-      "calculate": "datum.slot * 2 * PI / 7",
+      "calculate": "datum.slot * 2 * PI / 4",
       "as": "a0"
     },
     {
-      "calculate": "datum.a0 + 2 * PI / 7 * 0.94",
+      "calculate": "datum.a0 + 2 * PI / 4 * 0.98",
       "as": "a1"
     },
     {

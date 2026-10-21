@@ -1,12 +1,18 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Diverging stacked bars: how pet owners feel about adopting rescue pets",
+  "description": "100% stacked bars of attitudes to adoption; response percentages reported by AMA, 2025",
   "data": {
     "url": "data/adoption_attitudes.csv"
   },
   "width": "container",
   "height": {
-    "step": 62
+    "step": 54
+  },
+  "mark": {
+    "type": "bar",
+    "height": {
+      "band": 0.7
+    }
   },
   "encoding": {
     "y": {
@@ -20,169 +26,64 @@
       "axis": {
         "title": null,
         "labelLimit": 300,
-        "labelFontSize": 13,
-        "ticks": false,
-        "domain": false,
-        "labelPadding": 8
+        "labelFontSize": 12
       }
-    }
-  },
-  "layer": [
-    {
-      "mark": {
-        "type": "bar",
-        "height": {
-          "band": 0.72
-        }
-      },
-      "encoding": {
-        "x": {
-          "field": "x0",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              -42,
-              82
-            ]
-          },
-          "axis": null
-        },
-        "x2": {
-          "field": "x1"
-        },
-        "color": {
-          "field": "view",
-          "type": "nominal",
-          "sort": [
-            "Strongly against",
-            "Somewhat against",
-            "Neutral or might consider",
-            "Somewhat for",
-            "Strongly for"
-          ],
-          "scale": {
-            "domain": [
-              "Strongly against",
-              "Somewhat against",
-              "Neutral or might consider",
-              "Somewhat for",
-              "Strongly for"
-            ],
-            "range": [
-              "#b5483c",
-              "#e3a58f",
-              "#e6e0d3",
-              "#7fa592",
-              "#234B3A"
-            ]
-          },
-          "legend": {
-            "title": null,
-            "orient": "top",
-            "symbolType": "square",
-            "labelFontSize": 12,
-            "columns": 3
-          }
-        },
-        "tooltip": [
-          {
-            "field": "statement",
-            "title": "Statement"
-          },
-          {
-            "field": "view",
-            "title": "View"
-          },
-          {
-            "field": "percent",
-            "title": "% of owners"
-          }
+    },
+    "x": {
+      "aggregate": "sum",
+      "field": "percent",
+      "type": "quantitative",
+      "stack": "normalize",
+      "axis": {
+        "title": "Share of respondents (%)",
+        "format": ".0%"
+      }
+    },
+    "color": {
+      "field": "view",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Strongly against",
+          "Somewhat against",
+          "Neutral or might consider",
+          "Somewhat for",
+          "Strongly for"
+        ],
+        "range": [
+          "#b5483c",
+          "#e3a58f",
+          "#e6e0d3",
+          "#7fa592",
+          "#234B3A"
         ]
+      },
+      "legend": {
+        "title": null,
+        "orient": "top",
+        "columns": 3
       }
     },
-    {
-      "transform": [
-        {
-          "filter": "datum.percent >= 8"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "fontSize": 12,
-        "fontWeight": "bold"
-      },
-      "encoding": {
-        "x": {
-          "field": "mid",
-          "type": "quantitative"
-        },
-        "text": {
-          "field": "percent",
-          "type": "quantitative",
-          "format": ".0f"
-        },
-        "color": {
-          "condition": {
-            "test": "datum.view == 'Neutral or might consider' || datum.view == 'Somewhat against'",
-            "value": "#2b2a26"
-          },
-          "value": "white"
-        }
-      }
+    "order": {
+      "field": "x0",
+      "type": "quantitative",
+      "sort": "ascending"
     },
-    {
-      "transform": [
-        {
-          "filter": "datum.view == 'Strongly against'"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "align": "right",
-        "dx": -8,
-        "fontSize": 13,
-        "fontWeight": "bold",
-        "color": "#b5483c"
+    "tooltip": [
+      {
+        "field": "statement",
+        "title": "Statement"
       },
-      "encoding": {
-        "x": {
-          "field": "left_end",
-          "type": "quantitative"
-        },
-        "text": {
-          "field": "net_against",
-          "type": "quantitative",
-          "format": ".0f"
-        }
-      }
-    },
-    {
-      "transform": [
-        {
-          "filter": "datum.view == 'Strongly for'"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "dx": 8,
-        "fontSize": 13,
-        "fontWeight": "bold",
-        "color": "#234B3A"
+      {
+        "field": "view",
+        "title": "Response"
       },
-      "encoding": {
-        "x": {
-          "field": "right_end",
-          "type": "quantitative"
-        },
-        "text": {
-          "field": "net_for",
-          "type": "quantitative",
-          "format": ".0f"
-        }
+      {
+        "field": "percent",
+        "title": "Respondents (%)"
       }
-    }
-  ],
+    ]
+  },
   "config": {
     "view": {
       "stroke": null

@@ -73,3 +73,12 @@ footer ul { padding-left: 1.2rem; max-width: 46rem; }
 .chapter-nav a { color:#78213d; border:1px solid #bfa9b0; border-radius:99px; padding:.4rem .8rem; text-decoration:none; font-size:.9rem; }
 .chapter-nav a:hover, .chapter-nav a:focus-visible { background:#78213d; color:#fff; }
 .story { scroll-margin-top:1rem; }
+
+/* v8: all three council panels stay on the same horizontal row */
+.map-grid {display:block !important;}
+.map-grid figure {overflow-x:auto; margin-bottom:2.5rem;}
+.map-row {display:grid !important;grid-template-columns:repeat(3, 300px);gap:12px;align-items:start;width:max-content;min-width:100%;}
+.map-row .chart {width:300px !important;min-width:0 !important;flex:none !important;min-height:340px;}
+.map-row .vega-embed {width:auto !important;}
+.map-grid .chart {min-width:0 !important;}
+@media (max-width:980px) {.map-row {min-width:0;}.map-grid figure {overflow-x:auto;}}

@@ -19,20 +19,53 @@
     "x": {
       "field": "x",
       "type": "ordinal",
-      "axis": null
+      "axis": null,
+      "sort": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15"
+      ]
     },
     "y": {
       "field": "y",
       "type": "ordinal",
-      "axis": null
+      "axis": null,
+      "sort": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ]
     },
     "color": {
       "field": "label",
       "type": "nominal",
-      "sort": {
-        "field": "y",
-        "op": "min"
-      },
+      "sort": [
+        "Fish",
+        "Dogs",
+        "Cats",
+        "Birds",
+        "Small mammals",
+        "Other",
+        "Reptiles"
+      ],
       "scale": {
         "range": [
           "#6f9a86",
@@ -40,8 +73,17 @@
           "#234B3A",
           "#D9A441",
           "#8a6f4d",
-          "#a8b89a",
-          "#b9b2a4"
+          "#b9b2a4",
+          "#a8b89a"
+        ],
+        "domain": [
+          "Fish 12.1m",
+          "Dogs 7.4m",
+          "Cats 5.8m",
+          "Birds 4.4m",
+          "Small mammals 0.8m",
+          "Other 0.6m",
+          "Reptiles 0.5m"
         ]
       },
       "legend": {
@@ -51,6 +93,16 @@
         "symbolType": "square",
         "labelFontSize": 13
       }
-    }
+    },
+    "tooltip": [
+      {
+        "field": "pet",
+        "title": "Pet type"
+      },
+      {
+        "field": "label",
+        "title": "Estimated population"
+      }
+    ]
   }
 }

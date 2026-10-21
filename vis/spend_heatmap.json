@@ -73,8 +73,12 @@
           "type": "quantitative",
           "scale": {
             "type": "sqrt",
+            "domain": [
+              0,
+              1100
+            ],
             "range": [
-              "#f1ece2",
+              "#c3d6d0",
               "#234B3A"
             ]
           },
@@ -84,7 +88,22 @@
             "direction": "horizontal",
             "gradientLength": 260
           }
-        }
+        },
+        "tooltip": [
+          {
+            "field": "pet_label",
+            "title": "Pet"
+          },
+          {
+            "field": "category",
+            "title": "Expense"
+          },
+          {
+            "field": "dollars",
+            "title": "Average yearly spending",
+            "format": "$,.0f"
+          }
+        ]
       }
     },
     {
@@ -100,7 +119,7 @@
         },
         "color": {
           "condition": {
-            "test": "datum.dollars > 450",
+            "test": "datum.dollars >= 450",
             "value": "white"
           },
           "value": "#2b2a26"
