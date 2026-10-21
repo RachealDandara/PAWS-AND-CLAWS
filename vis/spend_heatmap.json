@@ -64,7 +64,7 @@
     {
       "mark": {
         "type": "rect",
-        "stroke": "white",
+        "stroke": "#FFFFFF",
         "strokeWidth": 2
       },
       "encoding": {
@@ -78,15 +78,17 @@
               1100
             ],
             "range": [
-              "#c3d6d0",
-              "#234B3A"
+              "#DCEAE0",
+              "#183E32"
             ]
           },
           "legend": {
             "title": "Dollars a year",
             "orient": "bottom",
             "direction": "horizontal",
-            "gradientLength": 260
+            "gradientLength": 220,
+            "format": "$,.0f",
+            "tickCount": 4
           }
         },
         "tooltip": [
@@ -122,7 +124,7 @@
             "test": "datum.dollars >= 450",
             "value": "white"
           },
-          "value": "#2b2a26"
+          "value": "#20392F"
         }
       }
     }

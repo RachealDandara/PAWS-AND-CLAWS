@@ -1,0 +1,1 @@
+Version 9: Forest green and cream theme; dark hero, sage alternating sections, cream chart cards, green navigation, coordinated unit chart and improved green spending heatmap. Preserved all data, charts and narrative from v8.1.
