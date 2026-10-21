@@ -1,92 +1,160 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "100% stacked bars of attitudes to adoption; response percentages reported by AMA, 2025",
+  "description": "Small multiples: how pet owners feel about adopting rescue pets, one panel per statement",
   "data": {
     "url": "data/adoption_attitudes.csv"
   },
-  "width": "container",
-  "height": {
-    "step": 54
-  },
-  "mark": {
-    "type": "bar",
-    "height": {
-      "band": 0.7
+  "transform": [
+    {
+      "calculate": "indexof(['Strongly against','Somewhat against','Neutral or might consider','Somewhat for','Strongly for'], datum.view)",
+      "as": "ord"
+    },
+    {
+      "calculate": "datum.statement == 'Would adopt a rescue pet next time' ? 'Would adopt a rescue\\npet next time' : datum.statement == 'No need to buy when shelters are full' ? 'No need to buy when\\nshelters are full' : 'Rescues are not riskier\\nthan bought pets'",
+      "as": "q"
     }
-  },
-  "encoding": {
-    "y": {
-      "field": "statement",
+  ],
+  "facet": {
+    "column": {
+      "field": "q",
       "type": "nominal",
       "sort": [
-        "Would adopt a rescue pet next time",
-        "No need to buy when shelters are full",
-        "Rescues are not riskier than bought pets"
+        "Would adopt a rescue\npet next time",
+        "No need to buy when\nshelters are full",
+        "Rescues are not riskier\nthan bought pets"
       ],
-      "axis": {
+      "header": {
         "title": null,
-        "labelLimit": 300,
-        "labelFontSize": 12
+        "labelFontSize": 12,
+        "labelFontWeight": "bold",
+        "labelLimit": 0,
+        "labelOrient": "top",
+        "labelPadding": 6,
+        "labelExpr": "split(datum.value, '\\n')",
+        "labelLineHeight": 16,
+        "labelAnchor": "start",
+        "labelAlign": "left"
       }
-    },
-    "x": {
-      "aggregate": "sum",
-      "field": "percent",
-      "type": "quantitative",
-      "stack": "normalize",
-      "axis": {
-        "title": "Share of respondents (%)",
-        "format": ".0%"
-      }
-    },
-    "color": {
-      "field": "view",
-      "type": "nominal",
-      "scale": {
-        "domain": [
+    }
+  },
+  "spec": {
+    "width": 165,
+    "height": 230,
+    "encoding": {
+      "x": {
+        "field": "view",
+        "type": "nominal",
+        "sort": [
           "Strongly against",
           "Somewhat against",
           "Neutral or might consider",
           "Somewhat for",
           "Strongly for"
         ],
-        "range": [
-          "#b5483c",
-          "#e3a58f",
-          "#e6e0d3",
-          "#7fa592",
-          "#234B3A"
-        ]
+        "axis": null
       },
-      "legend": {
-        "title": null,
-        "orient": "top",
-        "columns": 3
+      "y": {
+        "field": "percent",
+        "type": "quantitative",
+        "scale": {
+          "domain": [
+            0,
+            45
+          ]
+        },
+        "axis": {
+          "title": "% of owners",
+          "values": [
+            0,
+            10,
+            20,
+            30,
+            40
+          ],
+          "grid": true
+        }
       }
     },
-    "order": {
-      "field": "x0",
-      "type": "quantitative",
-      "sort": "ascending"
-    },
-    "tooltip": [
+    "layer": [
       {
-        "field": "statement",
-        "title": "Statement"
+        "mark": {
+          "type": "bar",
+          "cornerRadiusTopLeft": 2,
+          "cornerRadiusTopRight": 2
+        },
+        "encoding": {
+          "color": {
+            "field": "view",
+            "type": "nominal",
+            "scale": {
+              "domain": [
+                "Strongly against",
+                "Somewhat against",
+                "Neutral or might consider",
+                "Somewhat for",
+                "Strongly for"
+              ],
+              "range": [
+                "#6B6254",
+                "#B5AB99",
+                "#E6E0D3",
+                "#C48CA0",
+                "#7A2E4D"
+              ]
+            },
+            "legend": {
+              "title": null,
+              "orient": "top",
+              "symbolType": "square",
+              "labelFontSize": 12,
+              "columns": 5,
+              "labelLimit": 0,
+              "columnPadding": 8
+            }
+          },
+          "tooltip": [
+            {
+              "field": "statement",
+              "title": "Statement"
+            },
+            {
+              "field": "view",
+              "title": "View"
+            },
+            {
+              "field": "percent",
+              "title": "% of owners"
+            }
+          ]
+        }
       },
       {
-        "field": "view",
-        "title": "Response"
-      },
-      {
-        "field": "percent",
-        "title": "Respondents (%)"
+        "mark": {
+          "type": "text",
+          "dy": -6,
+          "fontSize": 12,
+          "fontWeight": "bold",
+          "color": "#2b2a26"
+        },
+        "encoding": {
+          "text": {
+            "field": "percent",
+            "type": "quantitative",
+            "format": ".0f"
+          }
+        }
       }
     ]
+  },
+  "resolve": {
+    "scale": {
+      "y": "shared"
+    }
   },
   "config": {
     "view": {
       "stroke": null
     }
-  }
+  },
+  "spacing": 18
 }

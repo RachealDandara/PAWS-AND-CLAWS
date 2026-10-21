@@ -1,112 +1,193 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Grouped bars compare pet ownership and non-ownership within each demographic group. Complement calculated as 100 minus ownership rate.",
+  "description": "Horizontal bars: share of each group that owns a pet, with the 73% national average marked",
   "data": {
     "url": "data/who_owns_pets.csv"
   },
   "width": "container",
   "height": {
-    "step": 38
+    "step": 28
   },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "height": {
+          "band": 0.7
+        }
+      },
+      "encoding": {
+        "y": {
+          "field": "label",
+          "type": "nominal",
+          "sort": {
+            "field": "rate",
+            "order": "descending"
+          },
+          "axis": {
+            "title": null,
+            "labelLimit": 0,
+            "labelFontSize": 13,
+            "ticks": false,
+            "domain": false,
+            "labelPadding": 8
+          }
+        },
+        "x": {
+          "field": "rate",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              100
+            ]
+          },
+          "axis": {
+            "title": "Share of the group that has a pet (%)",
+            "values": [
+              0,
+              20,
+              40,
+              60,
+              80,
+              100
+            ]
+          }
+        },
+        "color": {
+          "field": "direction",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Above average",
+              "Below average"
+            ],
+            "range": [
+              "#7A2E4D",
+              "#B9B2A4"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "top",
+            "symbolType": "square",
+            "labelFontSize": 13
+          }
+        },
+        "tooltip": [
+          {
+            "field": "group",
+            "title": "Group"
+          },
+          {
+            "field": "theme",
+            "title": "Type of group"
+          },
+          {
+            "field": "rate",
+            "title": "Have a pet (%)"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#2b2a26"
+      },
+      "encoding": {
+        "y": {
+          "field": "label",
+          "type": "nominal",
+          "sort": {
+            "field": "rate",
+            "order": "descending"
+          },
+          "axis": {
+            "title": null,
+            "labelLimit": 0,
+            "labelFontSize": 13,
+            "ticks": false,
+            "domain": false,
+            "labelPadding": 8
+          }
+        },
+        "x": {
+          "field": "rate",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "rate",
+          "type": "quantitative",
+          "format": ".0f"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 73
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [
+          4,
+          3
+        ],
+        "color": "#2b2a26",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 73,
+            "t": "National average: 73%"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dx": 6,
+        "dy": -4,
+        "fontSize": 12,
+        "fontStyle": "italic",
+        "color": "#5b574d"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "y": {
+          "value": 0
+        },
+        "text": {
+          "field": "t",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
   "config": {
     "view": {
       "stroke": null
     }
-  },
-  "transform": [
-    {
-      "fold": [
-        "rate",
-        "non_owner"
-      ],
-      "as": [
-        "ownership",
-        "percent"
-      ]
-    },
-    {
-      "calculate": "datum.ownership == 'rate' ? 'Has a pet' : 'Does not have a pet'",
-      "as": "status"
-    }
-  ],
-  "encoding": {
-    "y": {
-      "field": "label",
-      "type": "nominal",
-      "sort": {
-        "field": "rate",
-        "order": "descending"
-      },
-      "axis": {
-        "title": null,
-        "labelLimit": 285,
-        "labelFontSize": 12
-      }
-    },
-    "x": {
-      "field": "percent",
-      "type": "quantitative",
-      "scale": {
-        "domain": [
-          0,
-          100
-        ]
-      },
-      "axis": {
-        "title": "Percentage of people in each group",
-        "values": [
-          0,
-          20,
-          40,
-          60,
-          80,
-          100
-        ]
-      }
-    },
-    "yOffset": {
-      "field": "status",
-      "sort": [
-        "Has a pet",
-        "Does not have a pet"
-      ]
-    },
-    "color": {
-      "field": "status",
-      "type": "nominal",
-      "scale": {
-        "domain": [
-          "Has a pet",
-          "Does not have a pet"
-        ],
-        "range": [
-          "#234B3A",
-          "#D8B9A7"
-        ]
-      },
-      "legend": {
-        "title": null,
-        "orient": "top"
-      }
-    },
-    "tooltip": [
-      {
-        "field": "group",
-        "title": "Group"
-      },
-      {
-        "field": "status",
-        "title": "Status"
-      },
-      {
-        "field": "percent",
-        "title": "Share (%)",
-        "format": ".0f"
-      }
-    ]
-  },
-  "mark": {
-    "type": "bar",
-    "cornerRadiusEnd": 2
   }
 }

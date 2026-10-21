@@ -64,7 +64,7 @@
     {
       "mark": {
         "type": "rect",
-        "stroke": "#FFFFFF",
+        "stroke": "#FAF7F2",
         "strokeWidth": 2
       },
       "encoding": {
@@ -78,34 +78,17 @@
               1100
             ],
             "range": [
-              "#DCEAE0",
-              "#183E32"
+              "#EBD6DE",
+              "#7A2E4D"
             ]
           },
           "legend": {
             "title": "Dollars a year",
             "orient": "bottom",
             "direction": "horizontal",
-            "gradientLength": 220,
-            "format": "$,.0f",
-            "tickCount": 4
+            "gradientLength": 260
           }
-        },
-        "tooltip": [
-          {
-            "field": "pet_label",
-            "title": "Pet"
-          },
-          {
-            "field": "category",
-            "title": "Expense"
-          },
-          {
-            "field": "dollars",
-            "title": "Average yearly spending",
-            "format": "$,.0f"
-          }
-        ]
+        }
       }
     },
     {
@@ -121,10 +104,10 @@
         },
         "color": {
           "condition": {
-            "test": "datum.dollars >= 450",
+            "test": "datum.dollars > 380",
             "value": "white"
           },
-          "value": "#20392F"
+          "value": "#2b2a26"
         }
       }
     }

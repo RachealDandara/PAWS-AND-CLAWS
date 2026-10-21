@@ -1,16 +1,44 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Four reported leading reasons per pet, distributed around a full circle; wedge area represents reported percentage, not slices of a whole.",
+  "description": "Top reasons for getting each type of pet (rose charts; wedge area is proportional to percent)",
   "data": {
     "url": "data/reasons_for_getting_pet.csv"
   },
   "transform": [
     {
-      "calculate": "datum.slot * 2 * PI / 4",
+      "window": [
+        {
+          "op": "row_number",
+          "as": "rk"
+        }
+      ],
+      "groupby": [
+        "pet"
+      ],
+      "sort": [
+        {
+          "field": "percent",
+          "order": "descending"
+        }
+      ]
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "count",
+          "as": "n"
+        }
+      ],
+      "groupby": [
+        "pet"
+      ]
+    },
+    {
+      "calculate": "(datum.rk - 1) * 2 * PI / datum.n",
       "as": "a0"
     },
     {
-      "calculate": "datum.a0 + 2 * PI / 4 * 0.98",
+      "calculate": "datum.a0 + 2 * PI / datum.n * 0.96",
       "as": "a1"
     },
     {
@@ -96,13 +124,13 @@
                 "Good temperament"
               ],
               "range": [
-                "#C76B4E",
-                "#D9A441",
-                "#234B3A",
-                "#6f9a86",
-                "#8a6f4d",
-                "#b5483c",
-                "#b9b2a4"
+                "#7A2E4D",
+                "#C48CA0",
+                "#5B6F94",
+                "#A9B6CE",
+                "#8F8472",
+                "#D9B8A6",
+                "#CFC8B8"
               ]
             },
             "legend": {

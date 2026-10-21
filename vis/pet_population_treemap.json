@@ -22,49 +22,49 @@
           "id": "Fish",
           "parent": "Pets",
           "value": 12138.9,
-          "fill": "#164C80",
+          "fill": "#3F7C8C",
           "millions": 12.14
         },
         {
           "id": "Dogs",
           "parent": "Pets",
           "value": 7367.3,
-          "fill": "#8C1D40",
+          "fill": "#C76B4E",
           "millions": 7.37
         },
         {
           "id": "Cats",
           "parent": "Pets",
           "value": 5834.7,
-          "fill": "#B14D73",
+          "fill": "#234B3A",
           "millions": 5.83
         },
         {
           "id": "Birds",
           "parent": "Pets",
           "value": 4447.9,
-          "fill": "#4681AD",
+          "fill": "#D9A441",
           "millions": 4.45
         },
         {
           "id": "Small mammals",
           "parent": "Pets",
           "value": 769.5,
-          "fill": "#D58D9E",
+          "fill": "#8a6f4d",
           "millions": 0.77
         },
         {
           "id": "Other pets",
           "parent": "Pets",
           "value": 571.8,
-          "fill": "#769BC0",
+          "fill": "#B9B2A4",
           "millions": 0.57
         },
         {
           "id": "Reptiles",
           "parent": "Pets",
           "value": 511.9,
-          "fill": "#9DACC7",
+          "fill": "#A8B89A",
           "millions": 0.51
         }
       ],
@@ -94,20 +94,44 @@
           "round": true
         }
       ]
+    },
+    {
+      "name": "leaves",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth === 1"
+        }
+      ]
+    },
+    {
+      "name": "labels",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth === 1 && (datum.x1 - datum.x0) > 96 && (datum.y1 - datum.y0) > 34"
+        }
+      ]
+    },
+    {
+      "name": "values",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth === 1 && (datum.x1 - datum.x0) > 96 && (datum.y1 - datum.y0) > 65"
+        }
+      ]
     }
   ],
   "marks": [
     {
       "type": "rect",
       "from": {
-        "data": "tree"
+        "data": "leaves"
       },
-      "transform": [
-        {
-          "type": "filter",
-          "expr": "datum.depth === 1"
-        }
-      ],
       "encode": {
         "enter": {
           "fill": {
@@ -145,21 +169,15 @@
     {
       "type": "text",
       "from": {
-        "data": "tree"
+        "data": "labels"
       },
-      "transform": [
-        {
-          "type": "filter",
-          "expr": "datum.depth === 1 && (datum.x1 - datum.x0) > 78 && (datum.y1 - datum.y0) > 34"
-        }
-      ],
       "encode": {
         "enter": {
           "text": {
             "field": "id"
           },
           "fill": {
-            "value": "#fff"
+            "signal": "datum.id == 'Birds' ? '#2b2a26' : '#fff'"
           },
           "font": {
             "value": "Public Sans, Arial, sans-serif"
@@ -190,21 +208,15 @@
     {
       "type": "text",
       "from": {
-        "data": "tree"
+        "data": "values"
       },
-      "transform": [
-        {
-          "type": "filter",
-          "expr": "datum.depth === 1 && (datum.x1 - datum.x0) > 78 && (datum.y1 - datum.y0) > 65"
-        }
-      ],
       "encode": {
         "enter": {
           "text": {
             "signal": "format(datum.value / 1000, '.2f') + 'm'"
           },
           "fill": {
-            "value": "#fff"
+            "signal": "datum.id == 'Birds' ? '#2b2a26' : '#fff'"
           },
           "font": {
             "value": "Public Sans, Arial, sans-serif"

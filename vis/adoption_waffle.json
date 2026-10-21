@@ -2,7 +2,14 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Waffle charts: of every 100 dogs and 100 cats, how many were adopted and how many were bought",
   "data": {
-    "url": "data/adoption_waffle.csv"
+    "url": "data/adoption_waffle.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "x": "number",
+        "y": "number"
+      }
+    }
   },
   "facet": {
     "column": {
@@ -35,12 +42,14 @@
       "x": {
         "field": "x",
         "type": "ordinal",
-        "axis": null
+        "axis": null,
+        "sort": "ascending"
       },
       "y": {
         "field": "y",
         "type": "ordinal",
-        "axis": null
+        "axis": null,
+        "sort": "ascending"
       },
       "color": {
         "field": "source",
@@ -51,7 +60,7 @@
             "Bought from a breeder or pet shop"
           ],
           "range": [
-            "#234B3A",
+            "#7A2E4D",
             "#cdbb9a"
           ]
         },

@@ -1,25 +1,25 @@
 pet,reason,percent,slot
 Dogs,Companionship,56,0
-Dogs,Mental health,28,1
-Dogs,Good temperament,26,2
-Dogs,Relaxation,24,3
+Dogs,Mental health,28,2
+Dogs,Good temperament,26,6
+Dogs,Relaxation,24,1
 Cats,Companionship,48,0
-Cats,Rescue / give a home,32,1
-Cats,Relaxation,23,2
-Cats,Mental health,23,3
+Cats,Rescue / give a home,32,5
+Cats,Relaxation,23,1
+Cats,Mental health,23,2
 Small mammals,Companionship,34,0
-Small mammals,Hobby,33,1
-Small mammals,Relaxation,32,2
-Small mammals,Mental health,29,3
+Small mammals,Hobby,33,3
+Small mammals,Relaxation,32,1
+Small mammals,Mental health,29,2
 Birds,Companionship,37,0
-Birds,Hobby,30,1
-Birds,Relaxation,27,2
-Birds,Mental health,23,3
-Fish,Relaxation,49,0
-Fish,Hobby,37,1
-Fish,Low maintenance,30,2
-Fish,Mental health,20,3
-Reptiles,Low maintenance,25,0
-Reptiles,Hobby,24,1
-Reptiles,Relaxation,19,2
-Reptiles,Mental health,15,3
+Birds,Hobby,30,3
+Birds,Relaxation,27,1
+Birds,Mental health,23,2
+Fish,Relaxation,49,1
+Fish,Hobby,37,3
+Fish,Low maintenance,30,4
+Fish,Mental health,20,2
+Reptiles,Low maintenance,25,4
+Reptiles,Hobby,24,3
+Reptiles,Relaxation,19,1
+Reptiles,Mental health,15,2

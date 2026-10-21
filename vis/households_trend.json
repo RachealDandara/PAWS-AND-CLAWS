@@ -116,18 +116,19 @@
         ]
       },
       "axis": {
-        "title": "Households with pets (%) \u00b7 truncated at 50%",
+        "title": "Homes with a pet (%)",
         "tickCount": 4
       }
     }
   },
   "title": {
-    "text": "Homes with a pet, 2016\u20132025",
-    "subtitle": "Note: vertical axis starts at 50%, not 0%",
+    "text": "Note: the y-axis starts at 50%, not 0, so the rise looks steeper than it is.",
+    "orient": "top",
     "anchor": "start",
-    "fontSize": 15,
-    "subtitleFontSize": 12,
-    "subtitleColor": "#a44235",
-    "offset": 14
+    "fontSize": 12,
+    "fontWeight": "normal",
+    "fontStyle": "italic",
+    "color": "#5b574d",
+    "offset": 10
   }
 }

@@ -1,19 +1,19 @@
-group,label,theme,rate,average,direction,derived,non_owner
-Students,Students,Work,90,73,Above average,no,10.0
-Aged 18 to 24,Aged 18 to 24,Age,90,73,Above average,no,10.0
-Aged 25 to 29,Aged 25 to 29,Age,85,73,Above average,no,15.0
-Mortgage holders,Mortgage holders,Housing,85,73,Above average,no,15.0
-Families with kids at home,Families with kids at home,Household,85,73,Above average,no,15.0
-Households of three or more people,Households of three or more people,Household,84,73,Above average,no,16.0
-"Household income $100,000 or more","Household income $100,000 or more",Income,81,73,Above average,no,19.0
-Rural areas,Rural areas,Location,81,73,Above average,no,19.0
-Free-standing homes,Free-standing homes,Housing,78,73,Above average,no,22.0
-Males,Males,Gender,75,73,Above average,no,25.0
-Females,Females†,Gender,70,73,Below average,yes,30.0
-Regional areas,Regional areas†,Location,69,73,Below average,yes,31.0
-Own their home outright,Own their home outright†,Housing,66,73,Below average,yes,34.0
-Live alone or with one other person,Live alone or with one other person†,Household,65,73,Below average,yes,35.0
-"Household income under $50,000","Household income under $50,000†",Income,60,73,Below average,yes,40.0
-Apartments or units,Apartments or units†,Housing,57,73,Below average,yes,43.0
-Aged 60 or over,Aged 60 or over†,Age,57,73,Below average,yes,43.0
-Retired,Retired†,Work,55,73,Below average,yes,45.0
+group,label,theme,rate,average,direction,derived
+Students,Students,Work,90,73,Above average,no
+Aged 18 to 24,Aged 18 to 24,Age,90,73,Above average,no
+Aged 25 to 29,Aged 25 to 29,Age,85,73,Above average,no
+Mortgage holders,Mortgage holders,Housing,85,73,Above average,no
+Families with kids at home,Families with kids at home,Household,85,73,Above average,no
+Households of three or more people,Households of three or more people,Household,84,73,Above average,no
+"Household income $100,000 or more","Household income $100,000 or more",Income,81,73,Above average,no
+Rural areas,Rural areas,Location,81,73,Above average,no
+Free-standing homes,Free-standing homes,Housing,78,73,Above average,no
+Males,Males,Gender,75,73,Above average,no
+Females,Females†,Gender,70,73,Below average,yes
+Regional areas,Regional areas†,Location,69,73,Below average,yes
+Own their home outright,Own their home outright†,Housing,66,73,Below average,yes
+Live alone or with one other person,Live alone or with one other person†,Household,65,73,Below average,yes
+"Household income under $50,000","Household income under $50,000†",Income,60,73,Below average,yes
+Apartments or units,Apartments or units†,Housing,57,73,Below average,yes
+Aged 60 or over,Aged 60 or over†,Age,57,73,Below average,yes
+Retired,Retired†,Work,55,73,Below average,yes

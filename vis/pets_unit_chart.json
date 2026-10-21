@@ -2,7 +2,14 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Each square is 250,000 pets in Australia, 2025",
   "data": {
-    "url": "data/pets_units.csv"
+    "url": "data/pets_units.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "x": "number",
+        "y": "number"
+      }
+    }
   },
   "width": {
     "step": 24
@@ -20,70 +27,30 @@
       "field": "x",
       "type": "ordinal",
       "axis": null,
-      "sort": [
-        "0",
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
-        "11",
-        "12",
-        "13",
-        "14",
-        "15"
-      ]
+      "sort": "ascending"
     },
     "y": {
       "field": "y",
       "type": "ordinal",
       "axis": null,
-      "sort": [
-        "0",
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ]
+      "sort": "ascending"
     },
     "color": {
       "field": "label",
       "type": "nominal",
-      "sort": [
-        "Fish",
-        "Dogs",
-        "Cats",
-        "Birds",
-        "Small mammals",
-        "Other",
-        "Reptiles"
-      ],
+      "sort": {
+        "field": "y",
+        "op": "min"
+      },
       "scale": {
         "range": [
-          "#729A85",
-          "#D6A348",
+          "#3F7C8C",
+          "#C76B4E",
           "#234B3A",
-          "#A9B978",
-          "#907B60",
-          "#B9B8AA",
-          "#B7CBB8"
-        ],
-        "domain": [
-          "Fish 12.1m",
-          "Dogs 7.4m",
-          "Cats 5.8m",
-          "Birds 4.4m",
-          "Small mammals 0.8m",
-          "Other 0.6m",
-          "Reptiles 0.5m"
+          "#D9A441",
+          "#8a6f4d",
+          "#A8B89A",
+          "#B9B2A4"
         ]
       },
       "legend": {
@@ -91,18 +58,9 @@
         "orient": "bottom",
         "columns": 4,
         "symbolType": "square",
-        "labelFontSize": 13
+        "labelFontSize": 13,
+        "labelLimit": 0
       }
-    },
-    "tooltip": [
-      {
-        "field": "pet",
-        "title": "Pet type"
-      },
-      {
-        "field": "label",
-        "title": "Estimated population"
-      }
-    ]
+    }
   }
 }

@@ -4,7 +4,7 @@
   "width": 270,
   "height": 310,
   "title": {
-    "text": "Golden Plains · VIC",
+    "text": "Golden Plains \u00b7 VIC",
     "fontSize": 14,
     "anchor": "middle"
   },
@@ -111,10 +111,13 @@
           "type": "quantitative",
           "title": "Cat share (%)",
           "scale": {
-            "scheme": "yellowgreenblue",
             "domain": [
               0,
               60
+            ],
+            "range": [
+              "#DCE8E1",
+              "#234B3A"
             ]
           },
           "legend": null
