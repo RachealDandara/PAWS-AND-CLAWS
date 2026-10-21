@@ -1,0 +1,233 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Australian pet population by animal type, AMA 2025, PDF page 10.",
+  "width": 560,
+  "height": 355,
+  "padding": 4,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "data": [
+    {
+      "name": "tree",
+      "values": [
+        {
+          "id": "Pets",
+          "parent": null,
+          "value": 0,
+          "fill": "#fff"
+        },
+        {
+          "id": "Fish",
+          "parent": "Pets",
+          "value": 12138.9,
+          "fill": "#164C80",
+          "millions": 12.14
+        },
+        {
+          "id": "Dogs",
+          "parent": "Pets",
+          "value": 7367.3,
+          "fill": "#8C1D40",
+          "millions": 7.37
+        },
+        {
+          "id": "Cats",
+          "parent": "Pets",
+          "value": 5834.7,
+          "fill": "#B14D73",
+          "millions": 5.83
+        },
+        {
+          "id": "Birds",
+          "parent": "Pets",
+          "value": 4447.9,
+          "fill": "#4681AD",
+          "millions": 4.45
+        },
+        {
+          "id": "Small mammals",
+          "parent": "Pets",
+          "value": 769.5,
+          "fill": "#D58D9E",
+          "millions": 0.77
+        },
+        {
+          "id": "Other pets",
+          "parent": "Pets",
+          "value": 571.8,
+          "fill": "#769BC0",
+          "millions": 0.57
+        },
+        {
+          "id": "Reptiles",
+          "parent": "Pets",
+          "value": 511.9,
+          "fill": "#9DACC7",
+          "millions": 0.51
+        }
+      ],
+      "transform": [
+        {
+          "type": "stratify",
+          "key": "id",
+          "parentKey": "parent"
+        },
+        {
+          "type": "treemap",
+          "field": "value",
+          "sort": {
+            "field": "value",
+            "order": "descending"
+          },
+          "method": "squarify",
+          "size": [
+            {
+              "signal": "width"
+            },
+            {
+              "signal": "height"
+            }
+          ],
+          "padding": 3,
+          "round": true
+        }
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "from": {
+        "data": "tree"
+      },
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth === 1"
+        }
+      ],
+      "encode": {
+        "enter": {
+          "fill": {
+            "field": "fill"
+          },
+          "cornerRadius": {
+            "value": 3
+          },
+          "tooltip": {
+            "signal": "datum.id + ': ' + format(datum.value * 1000, ',.0f') + ' estimated pets (' + format(datum.value / 31641.9, '.1%') + ' of total)'"
+          }
+        },
+        "update": {
+          "x": {
+            "field": "x0"
+          },
+          "y": {
+            "field": "y0"
+          },
+          "x2": {
+            "field": "x1"
+          },
+          "y2": {
+            "field": "y1"
+          },
+          "stroke": {
+            "value": "#fff"
+          },
+          "strokeWidth": {
+            "value": 2
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "tree"
+      },
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth === 1 && (datum.x1 - datum.x0) > 78 && (datum.y1 - datum.y0) > 34"
+        }
+      ],
+      "encode": {
+        "enter": {
+          "text": {
+            "field": "id"
+          },
+          "fill": {
+            "value": "#fff"
+          },
+          "font": {
+            "value": "Public Sans, Arial, sans-serif"
+          },
+          "fontWeight": {
+            "value": 600
+          },
+          "fontSize": {
+            "signal": "datum.value > 4000 ? 17 : 12"
+          },
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          }
+        },
+        "update": {
+          "x": {
+            "signal": "(datum.x0 + datum.x1) / 2"
+          },
+          "y": {
+            "signal": "(datum.y0 + datum.y1) / 2 - 10"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "tree"
+      },
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth === 1 && (datum.x1 - datum.x0) > 78 && (datum.y1 - datum.y0) > 65"
+        }
+      ],
+      "encode": {
+        "enter": {
+          "text": {
+            "signal": "format(datum.value / 1000, '.2f') + 'm'"
+          },
+          "fill": {
+            "value": "#fff"
+          },
+          "font": {
+            "value": "Public Sans, Arial, sans-serif"
+          },
+          "fontSize": {
+            "value": 14
+          },
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          }
+        },
+        "update": {
+          "x": {
+            "signal": "(datum.x0 + datum.x1) / 2"
+          },
+          "y": {
+            "signal": "(datum.y0 + datum.y1) / 2 + 14"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+statement,view,percent,x0,x1,mid,net_against,net_for,left_end,right_end
+Would adopt a rescue pet next time,Strongly against,6,-32.5,-26.5,-29.5,14,48,-32.5,66.5
+Would adopt a rescue pet next time,Somewhat against,8,-26.5,-18.5,-22.5,14,48,-32.5,66.5
+Would adopt a rescue pet next time,Neutral or might consider,37,-18.5,18.5,0.0,14,48,-32.5,66.5
+Would adopt a rescue pet next time,Somewhat for,32,18.5,50.5,34.5,14,48,-32.5,66.5
+Would adopt a rescue pet next time,Strongly for,16,50.5,66.5,58.5,14,48,-32.5,66.5
+No need to buy when shelters are full,Strongly against,3,-25.5,-22.5,-24.0,12,62,-25.5,75.5
+No need to buy when shelters are full,Somewhat against,9,-22.5,-13.5,-18.0,12,62,-25.5,75.5
+No need to buy when shelters are full,Neutral or might consider,27,-13.5,13.5,0.0,12,62,-25.5,75.5
+No need to buy when shelters are full,Somewhat for,34,13.5,47.5,30.5,12,62,-25.5,75.5
+No need to buy when shelters are full,Strongly for,28,47.5,75.5,61.5,12,62,-25.5,75.5
+Rescues are not riskier than bought pets,Strongly against,6,-41.0,-35.0,-38.0,25,42,-41.0,58.0
+Rescues are not riskier than bought pets,Somewhat against,19,-35.0,-16.0,-25.5,25,42,-41.0,58.0
+Rescues are not riskier than bought pets,Neutral or might consider,32,-16.0,16.0,0.0,25,42,-41.0,58.0
+Rescues are not riskier than bought pets,Somewhat for,23,16.0,39.0,27.5,25,42,-41.0,58.0
+Rescues are not riskier than bought pets,Strongly for,19,39.0,58.0,48.5,25,42,-41.0,58.0

@@ -1,0 +1,146 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Butterfly chart: dogs (left) and cats (right) on four health-care measures",
+  "data": {
+    "url": "data/dogs_vs_cats_health.csv"
+  },
+  "width": "container",
+  "height": {
+    "step": 48
+  },
+  "transform": [
+    {
+      "fold": [
+        "Dogs",
+        "Cats"
+      ],
+      "as": [
+        "pet",
+        "value"
+      ]
+    },
+    {
+      "calculate": "datum.pet == 'Dogs' ? -datum.value : datum.value",
+      "as": "signed"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "measure",
+      "type": "nominal",
+      "sort": [
+        "Desexed",
+        "Microchipped",
+        "Saw a vet in the last 12 months",
+        "Vaccinated in the last 12 months"
+      ],
+      "axis": {
+        "title": null,
+        "labelLimit": 220,
+        "labelFontSize": 13,
+        "ticks": false,
+        "domain": false,
+        "labelPadding": 10
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "height": {
+          "band": 0.7
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "signed",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -105,
+              105
+            ]
+          },
+          "axis": {
+            "title": "Share of animals (%)",
+            "labelExpr": "abs(datum.value) + '%'",
+            "values": [
+              -100,
+              -50,
+              0,
+              50,
+              100
+            ],
+            "gridColor": "#e8e2d6"
+          }
+        },
+        "color": {
+          "field": "pet",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Dogs",
+              "Cats"
+            ],
+            "range": [
+              "#C76B4E",
+              "#234B3A"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "top",
+            "symbolType": "square",
+            "labelFontSize": 13
+          }
+        },
+        "tooltip": [
+          {
+            "field": "measure",
+            "title": "Measure"
+          },
+          {
+            "field": "pet",
+            "title": "Animal"
+          },
+          {
+            "field": "value",
+            "title": "%"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "white",
+        "align": "center"
+      },
+      "transform": [
+        {
+          "calculate": "datum.signed / 2",
+          "as": "mid"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "mid",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "value",
+          "type": "quantitative",
+          "format": ".0f"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

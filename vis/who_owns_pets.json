@@ -1,0 +1,245 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Diverging bars: share of each group that owns a pet, compared with the 73% national average",
+  "data": {
+    "url": "data/who_owns_pets.csv"
+  },
+  "width": "container",
+  "height": {
+    "step": 29
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "height": {
+          "band": 0.68
+        }
+      },
+      "encoding": {
+        "y": {
+          "field": "label",
+          "type": "nominal",
+          "sort": {
+            "field": "rate",
+            "order": "descending"
+          },
+          "axis": {
+            "title": null,
+            "labelLimit": 280,
+            "labelFontSize": 13,
+            "ticks": false,
+            "domain": false,
+            "labelPadding": 8
+          }
+        },
+        "x": {
+          "field": "average",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              40,
+              100
+            ]
+          },
+          "axis": {
+            "title": "Share of the group that has a pet (%)",
+            "values": [
+              40,
+              50,
+              60,
+              70,
+              80,
+              90,
+              100
+            ],
+            "gridColor": "#e8e2d6"
+          }
+        },
+        "x2": {
+          "field": "rate"
+        },
+        "color": {
+          "field": "direction",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Above average",
+              "Below average"
+            ],
+            "range": [
+              "#234B3A",
+              "#C76B4E"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "top",
+            "symbolType": "square",
+            "labelFontSize": 13
+          }
+        },
+        "tooltip": [
+          {
+            "field": "group",
+            "title": "Group"
+          },
+          {
+            "field": "theme",
+            "title": "Type of group"
+          },
+          {
+            "field": "rate",
+            "title": "Have a pet (%)"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 73
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [
+          4,
+          3
+        ],
+        "color": "#2b2a26",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 73,
+            "t": "National average: 73%"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dx": 6,
+        "dy": -24,
+        "fontSize": 12,
+        "fontStyle": "italic",
+        "color": "#5b574d"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "y": {
+          "value": 0
+        },
+        "text": {
+          "field": "t",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.direction == 'Above average'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 7,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#234B3A"
+      },
+      "encoding": {
+        "y": {
+          "field": "label",
+          "type": "nominal",
+          "sort": {
+            "field": "rate",
+            "order": "descending"
+          },
+          "axis": {
+            "title": null,
+            "labelLimit": 280,
+            "labelFontSize": 13,
+            "ticks": false,
+            "domain": false,
+            "labelPadding": 8
+          }
+        },
+        "x": {
+          "field": "rate",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "rate",
+          "type": "quantitative",
+          "format": ".0f"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.direction == 'Below average'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -7,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#C76B4E"
+      },
+      "encoding": {
+        "y": {
+          "field": "label",
+          "type": "nominal",
+          "sort": {
+            "field": "rate",
+            "order": "descending"
+          },
+          "axis": {
+            "title": null,
+            "labelLimit": 280,
+            "labelFontSize": 13,
+            "ticks": false,
+            "domain": false,
+            "labelPadding": 8
+          }
+        },
+        "x": {
+          "field": "rate",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "rate",
+          "type": "quantitative",
+          "format": ".0f"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

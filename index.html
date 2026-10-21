@@ -36,32 +36,39 @@
   </dl>
 </header>
 
-<main>
-  <section class="story" id="geography">
-    <div class="wrap">
-      <h2>From tropical Queensland to coastal Victoria</h2>
-      <p>Three local councils show how recorded pet registrations vary geographically. These are <strong>administrative records, not estimates of pet ownership</strong>. Townsville includes cat approvals and dog registrations (March 2026); Surf Coast includes registered records only; Golden Plains records have no registration-status filter. Different rules and reporting dates mean totals should not be treated as directly comparable ownership rates.</p>
-      <div class="map-grid">
-        <figure><figcaption>Map 1 · Proportional symbols — registrations by suburb (three council panels)</figcaption><div class="map-row"><div class="chart" data-spec="map_total_symbols_townsville"></div><div class="chart" data-spec="map_total_symbols_golden_plains"></div><div class="chart" data-spec="map_total_symbols_surf_coast"></div></div><p class="src">Circle area represents the number of recorded cats and dogs in each matched suburb. Suburb markers are placed at representative points, not animal addresses. Each council is zoomed to fit, so the three maps are not drawn to the same scale; circle sizes are comparable.</p></figure>
-        <figure><figcaption>Map 2 · Choropleth — percentage of records that are cats (three council panels)</figcaption><div class="map-row"><div class="chart" data-spec="map_cat_share_townsville"></div><div class="chart" data-spec="map_cat_share_golden_plains"></div><div class="chart" data-spec="map_cat_share_surf_coast"></div></div><p class="src">Cat records divided by cat and dog records within each council's data; not the share of households owning cats. <strong>Grey suburbs have fewer than 20 records</strong>, too few for a reliable percentage. Each council is zoomed to fit, so the three maps are not drawn to the same scale.</p></figure>
-        <figure><figcaption>Map 3 · Illustrative dot-density map (three council panels)</figcaption><div class="map-row"><div class="chart" data-spec="map_dot_density_townsville"></div><div class="chart" data-spec="map_dot_density_golden_plains"></div><div class="chart" data-spec="map_dot_density_surf_coast"></div></div><p class="src">Each dot represents about 50 recorded animals, randomly placed within the matching suburb polygon. <strong>Dots do not show real pet locations.</strong> Only suburbs matched to ABS 2021 locality boundaries are displayed.</p></figure>
-      </div>
-      <p class="src">Sources: <a href="https://data.gov.au/data/dataset/6d43565d-51a9-4e66-aef4-6bdb7b2abb9d">Townsville City Council animal registrations</a>; <a href="https://data.gov.au/">Surf Coast Shire Registered Animals</a>; <a href="https://data.gov.au/data/dataset/animal-registrations">Golden Plains Shire Animal Registrations</a>. Source CSV summaries are included in the <code>data</code> folder. Boundaries: ABS Local Government Areas 2025 and Suburbs and Localities 2021 (GDA94). Counts reflect council registration/approval records, not all pet ownership. Unmatched suburb names are omitted from suburb-level maps; council totals should not be inferred from the map. Source dates and registration definitions differ.</p>
-    </div>
-  </section>
+<nav class="chapter-nav wrap" aria-label="Explore the story"><a href="#trends">Trends</a><a href="#pet-types">Pet types</a><a href="#demographics">Who owns pets?</a><a href="#motivations">Motivations</a><a href="#adoption">Adoption</a><a href="#geography">Geography</a><a href="#spending">Spending</a><a href="#care">Pet care</a></nav>
 
-  <section class="story">
+<main>
+
+  <section class="story" id="trends">
     <div class="wrap cols">
       <div class="text">
         <h2>Three in four homes now have a pet</h2>
         <p>Ownership dipped slightly before 2020, then jumped during the pandemic years. It kept climbing afterwards, so this was not just a lockdown fad.</p>
-        <p>Dogs and cats both gained ground since 2019. Dogs are in nearly half of all homes. Cats are in a third.</p>
+        <p>In 2016, 62% of households had a pet. The figure reached 73% by 2025. This is the national picture before we look at which animals Australians keep.</p>
       </div>
       <div>
         <figure>
           <figcaption>Homes with a pet, 2016 to 2025</figcaption>
           <div class="chart" data-spec="households_trend" role="img" aria-label="Line chart: homes with a pet rose from 62% in 2016 to 61% in 2019, 69% in 2022 and 73% in 2025."></div>
           <p class="src">Source: AMA, <em>Pets in Australia 2025</em>, chapter 3. Survey of about 2,450 adults, February to March 2025.</p>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <section class="story" id="pet-types">
+    <div class="wrap cols">
+      <div class="text">
+        <h2>Australia's favourite companions</h2>
+        <p>Dogs are the most widely owned pet type, found in 49% of Australian households in 2025. But when we count individual animals, fish come first: there are about 12.1 million pet fish compared with 7.4 million dogs.</p>
+        <p>That's because fish-owning households keep an average of 10 fish, while dog-owning households average 1.4 dogs. Household ownership rates and the number of individual pets answer different questions.</p>
+        <p class="callout">How to read the treemap: each rectangle's area represents the estimated number of individual animals of that type, not the share of households owning them. Hover for the estimated count.</p>
+      </div>
+      <div>
+        <figure>
+          <figcaption>Australia's estimated 31.6 million pets, by animal type (2025)</figcaption>
+          <div class="chart" data-spec="pet_population_treemap" role="img" aria-label="Treemap of estimated pet population in Australia in 2025. Fish are largest at 12.14 million, followed by dogs at 7.37 million, cats at 5.83 million and birds at 4.45 million."></div>
+          <p class="src">Source: AMA, <em>Pets in Australia 2025</em>, page 7 (PDF page 10), pet population estimates in thousands. Values are survey-based estimates and rounded.</p>
         </figure>
         <figure>
           <figcaption>Homes with a dog or a cat</figcaption>
@@ -72,7 +79,75 @@
     </div>
   </section>
 
-  <section class="story">
+  <section class="story" id="demographics">
+    <div class="wrap cols">
+      <div class="text">
+        <h2>Who owns pets? Young people, families and mortgage holders</h2>
+        <p>Nine in ten students and 18 to 24 year olds have a pet. So do 85% of families with children and of people paying off a mortgage.</p>
+        <p>Pets are least common among retirees, over-60s and apartment dwellers. Rural Australians break the usual pattern: 81% have a pet even though rural incomes are lower. Money is not the whole story either, since 74% of people in financial difficulty own a pet, against 73% of those doing well.</p>
+        <p class="callout">How to read the chart: each bar starts at the 73% national average. Bars to the right are groups more likely than average to have a pet. † The report gives these groups' share of non-owners, so we show 100% minus that number.</p>
+      </div>
+      <figure>
+        <figcaption>Share of each group that has a pet</figcaption>
+        <div class="chart" data-spec="who_owns_pets" role="img" aria-label="Diverging bars around the 73% national average. Students and 18 to 24 year olds are highest at 90%. Retirees are lowest at 55%."></div>
+        <p class="src">Source: AMA, <em>Pets in Australia 2025</em>, chapter 1, "Who are Australia's pet owners?" (page 8). Groups are not mutually exclusive: one person can be in several.</p>
+      </figure>
+    </div>
+  </section>
+  <section class="story" id="motivations">
+    <div class="wrap cols">
+      <div class="text">
+        <h2>Why do Australians get a pet?</h2>
+        <p>Companionship comes first for dogs, cats, birds and small mammals. Fish are the exception: owners get them to relax.</p>
+        <p>Mental health is among the top four reasons for every kind of pet. For small mammals it has jumped from 8% of owners in 2022 to 29% in 2025.</p>
+        <p class="callout">How to read the rose: each wedge is one reason, and the wedge's area shows the share of owners who gave it. Only each pet's top reasons are shown.</p>
+      </div>
+      <div>
+        <figure>
+          <figcaption>Top reasons for getting each type of pet, 2025</figcaption>
+          <div class="chart" data-spec="reasons_rose" role="img" aria-label="Rose charts for six pet types. Companionship is the biggest wedge for dogs, cats, birds and small mammals. Relaxation is biggest for fish and low maintenance for reptiles."></div>
+          <p class="src">Source: AMA, <em>Pets in Australia 2025</em>, chapter 4 (page 22). Owners could give more than one reason. Only 65 small-mammal and 69 reptile owners were surveyed, so treat those two pets as rough.</p>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <section class="story" id="adoption">
+    <div class="wrap cols">
+      <div class="text">
+        <h2>Cats are mostly adopted. Dogs are mostly bought.</h2>
+        <p>Three in four cats came from a shelter, the street or someone they knew. For dogs it is fewer than half. A dog is also dearer: owners who paid spent $1,419 on average, against $419 for a cat.</p>
+        <p>Attitudes are warming. About half of owners say they would probably or only adopt next time, and 62% agree there is no need to buy when so many shelter animals need homes.</p>
+        <p>Among owners who did not adopt, the top reason for not considering it was wanting a particular breed (38% for both cats and dogs).</p>
+      </div>
+      <div>
+        <figure>
+          <figcaption>Of every 100 dogs and 100 cats, where did they come from?</figcaption>
+          <div class="chart" data-spec="adoption_waffle" role="img" aria-label="Waffle charts: 45 of 100 dogs and 75 of 100 cats were adopted or rehomed; the rest were bought from a breeder or pet shop."></div>
+          <p class="src">Source: AMA, <em>Pets in Australia 2025</em>, chapter 3. "Adopted or rehomed" means not obtained from a breeder or pet shop, so it includes friends, family and inheritance.</p>
+        </figure>
+        <figure>
+          <figcaption>How pet owners feel about adopting a rescue pet</figcaption>
+          <div class="chart" data-spec="adoption_attitudes" role="img" aria-label="Diverging bars: more owners are for adoption than against it on all three questions."></div>
+          <p class="src">Source: AMA, <em>Pets in Australia 2025</em>, chapter 3. Green means a pro-adoption view and red means an anti-adoption view. For the third statement, disagreeing counts as pro-adoption. Percentages are rounded, so they may not add to 100.</p>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="geography">
+    <div class="wrap">
+      <h2>Where do registered pets live? Three local case studies</h2>
+      <p>Three local councils show how recorded pet registrations vary geographically. These are <strong>administrative records, not estimates of pet ownership</strong>. Townsville includes cat approvals and dog registrations (March 2026); Surf Coast includes registered records only; Golden Plains records have no registration-status filter. Different rules and reporting dates mean totals should not be treated as directly comparable ownership rates.</p>
+      <div class="map-grid">
+        <figure><figcaption>Map 1 · Proportional symbols — registrations by suburb (three council panels)</figcaption><div class="map-row"><div class="chart" data-spec="map_total_symbols_townsville"></div><div class="chart" data-spec="map_total_symbols_golden_plains"></div><div class="chart" data-spec="map_total_symbols_surf_coast"></div></div><p class="src">Circle area represents the number of recorded cats and dogs in each matched suburb. Suburb markers are placed at representative points, not animal addresses. Each council is zoomed to fit, so the three maps are not drawn to the same scale; circle sizes are comparable.</p></figure>
+        <figure><figcaption>Map 2 · Choropleth — percentage of records that are cats (three council panels)</figcaption><div class="map-row"><div class="chart" data-spec="map_cat_share_townsville"></div><div class="chart" data-spec="map_cat_share_golden_plains"></div><div class="chart" data-spec="map_cat_share_surf_coast"></div></div><p class="src">Cat records divided by cat and dog records within each council's data; not the share of households owning cats. <strong>Grey suburbs have fewer than 20 records</strong>, too few for a reliable percentage. Each council is zoomed to fit, so the three maps are not drawn to the same scale.</p></figure>
+        <figure><figcaption>Map 3 · Illustrative dot-density map (three council panels)</figcaption><div class="map-row"><div class="chart" data-spec="map_dot_density_townsville"></div><div class="chart" data-spec="map_dot_density_golden_plains"></div><div class="chart" data-spec="map_dot_density_surf_coast"></div></div><p class="src">Each dot represents about 50 recorded animals, randomly placed within the matching suburb polygon. <strong>Dots do not show real pet locations.</strong> Only suburbs matched to ABS 2021 locality boundaries are displayed.</p></figure>
+      </div>
+      <p class="src">Sources: <a href="https://data.gov.au/data/dataset/6d43565d-51a9-4e66-aef4-6bdb7b2abb9d">Townsville City Council animal registrations</a>; <a href="https://data.gov.au/">Surf Coast Shire Registered Animals</a>; <a href="https://data.gov.au/data/dataset/animal-registrations">Golden Plains Shire Animal Registrations</a>. Source CSV summaries are included in the <code>data</code> folder. Boundaries: ABS Local Government Areas 2025 and Suburbs and Localities 2021 (GDA94). Counts reflect council registration/approval records, not all pet ownership. Unmatched suburb names are omitted from suburb-level maps; council totals should not be inferred from the map. Source dates and registration definitions differ.</p>
+    </div>
+  </section>
+
+  <section class="story" id="spending">
     <div class="wrap cols">
       <div class="text">
         <h2>A dog costs about $860 a year more than a cat</h2>
@@ -96,21 +171,23 @@
     </div>
   </section>
 
-  <section class="story">
+
+  <section class="story" id="care">
     <div class="wrap cols">
       <div class="text">
-        <h2>Cats are usually adopted. Dogs are usually bought.</h2>
-        <p>Three in four cats came from a shelter, a stray or a friend. For dogs, it is fewer than half.</p>
-        <p>Dogs are ahead on vet visits, microchipping and recent vaccination. Cats are ahead on desexing.</p>
+        <h2>Dogs see the vet more. Cats are desexed more.</h2>
+        <p>Dogs are ahead on vet visits, vaccination and microchipping. Cats are ahead on desexing, which is also more likely to be included in the price of a cat.</p>
+        <p>Cost is part of the story: 22% of cat owners and 30% of dog owners who visited the vet less often said they could not afford it.</p>
       </div>
-      <figure>
-        <figcaption>Dogs and cats compared</figcaption>
-        <div class="chart" data-spec="dogs_vs_cats" role="img" aria-label="Dumbbell chart comparing dogs and cats on six measures including adoption, desexing and vet visits."></div>
-        <p class="src">Source: AMA, <em>Pets in Australia 2025</em>, chapters 3 and 7. "Adopted" means not obtained from a breeder or pet shop.</p>
-      </figure>
+      <div>
+        <figure>
+          <figcaption>Dogs and cats compared on health care</figcaption>
+          <div class="chart" data-spec="dogs_cats_butterfly" role="img" aria-label="Butterfly chart: dogs lead on microchipping, vet visits and recent vaccination; cats lead on desexing."></div>
+          <p class="src">Source: AMA, <em>Pets in Australia 2025</em>, chapters 5 and 7.</p>
+        </figure>
+      </div>
     </div>
   </section>
-
   <section class="story">
     <div class="wrap cols">
       <div class="text">
@@ -129,21 +206,16 @@
     <div class="wrap cols">
       <div class="text">
         <h2>Love is growing, and so is the strain</h2>
-        <p>Eight in ten owners report at least some difficulty, up from 79% in 2022 and 66% in 2019. Ongoing costs are now the top difficulty.</p>
-        <p>One in eight pet-owning homes needed financial help to pay a vet bill. About one in six dog and cat owners cut back on health care, such as skipping check-ups or vaccines.</p>
+        <p>Owning a pet is getting harder, mostly because of money. Ongoing costs are now owners' biggest difficulty, and a growing number of owners are cutting back on their pet's health care.</p>
+        <p>Cost is also the top reason people who want a pet do not have one: 26% name it, up from 21% in 2022.</p>
+        <p class="src">Source: AMA, <em>Pets in Australia 2025</em>, chapters 5 and 7. Cost-cutting figures are for dog and cat owners.</p>
       </div>
-      <div>
-        <figure>
-          <figcaption>Biggest difficulties of owning a pet</figcaption>
-          <div class="chart" data-spec="difficulties" role="img" aria-label="Dumbbell chart: ongoing costs, leaving pets alone and holidays were all named as difficulties more often in 2025 than in 2022."></div>
-          <p class="src">Source: AMA, <em>Pets in Australia 2025</em>, chapter 5. Owners chose their top three difficulties.</p>
-        </figure>
-        <figure>
-          <figcaption>How owners cut costs in the last 12 months</figcaption>
-          <div class="chart" data-spec="cost_cutting" role="img" aria-label="Dumbbell chart comparing dog and cat owners on cost-cutting actions such as shopping around for food."></div>
-          <p class="src">Source: AMA, <em>Pets in Australia 2025</em>, chapter 5.</p>
-        </figure>
-      </div>
+      <dl class="facts">
+        <div><dt>82%</dt><dd>of owners find pet ownership difficult in some way, up from 66% in 2019</dd></div>
+        <div><dt>31%</dt><dd>name ongoing costs as a top-three difficulty, up from 24% in 2022</dd></div>
+        <div><dt>12%</dt><dd>of pet-owning homes needed financial help to pay a vet bill</dd></div>
+        <div><dt>1 in 6</dt><dd>dog and cat owners skipped check-ups or vaccines, or cut medication, to save money</dd></div>
+      </dl>
     </div>
   </section>
 </main>

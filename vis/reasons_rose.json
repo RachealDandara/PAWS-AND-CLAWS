@@ -1,0 +1,181 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Top reasons for getting each type of pet (rose charts; wedge area is proportional to percent)",
+  "data": {
+    "url": "data/reasons_for_getting_pet.csv"
+  },
+  "transform": [
+    {
+      "calculate": "datum.slot * 2 * PI / 7",
+      "as": "a0"
+    },
+    {
+      "calculate": "datum.a0 + 2 * PI / 7 * 0.94",
+      "as": "a1"
+    },
+    {
+      "calculate": "(datum.a0 + datum.a1) / 2",
+      "as": "amid"
+    }
+  ],
+  "facet": {
+    "column": {
+      "field": "pet",
+      "type": "nominal",
+      "sort": [
+        "Dogs",
+        "Cats",
+        "Small mammals",
+        "Birds",
+        "Fish",
+        "Reptiles"
+      ],
+      "header": {
+        "title": null,
+        "labelFontSize": 15,
+        "labelFontWeight": "bold",
+        "labelPadding": 4
+      }
+    }
+  },
+  "spec": {
+    "width": 150,
+    "height": 150,
+    "layer": [
+      {
+        "mark": {
+          "type": "arc",
+          "stroke": "#FAF7F2",
+          "strokeWidth": 1.5
+        },
+        "encoding": {
+          "theta": {
+            "field": "a0",
+            "type": "quantitative",
+            "scale": null
+          },
+          "theta2": {
+            "field": "a1"
+          },
+          "radius": {
+            "field": "percent",
+            "type": "quantitative",
+            "scale": {
+              "type": "sqrt",
+              "zero": true,
+              "domain": [
+                0,
+                60
+              ],
+              "range": [
+                0,
+                66
+              ]
+            }
+          },
+          "color": {
+            "field": "reason",
+            "type": "nominal",
+            "sort": [
+              "Companionship",
+              "Relaxation",
+              "Mental health",
+              "Hobby",
+              "Low maintenance",
+              "Rescue / give a home",
+              "Good temperament"
+            ],
+            "scale": {
+              "domain": [
+                "Companionship",
+                "Relaxation",
+                "Mental health",
+                "Hobby",
+                "Low maintenance",
+                "Rescue / give a home",
+                "Good temperament"
+              ],
+              "range": [
+                "#C76B4E",
+                "#D9A441",
+                "#234B3A",
+                "#6f9a86",
+                "#8a6f4d",
+                "#b5483c",
+                "#b9b2a4"
+              ]
+            },
+            "legend": {
+              "title": null,
+              "orient": "bottom",
+              "columns": 4,
+              "symbolType": "square",
+              "labelFontSize": 13
+            }
+          },
+          "tooltip": [
+            {
+              "field": "pet",
+              "title": "Pet"
+            },
+            {
+              "field": "reason",
+              "title": "Reason"
+            },
+            {
+              "field": "percent",
+              "title": "% of owners"
+            }
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "radiusOffset": 9,
+          "fontSize": 12,
+          "fontWeight": "bold",
+          "color": "#2b2a26"
+        },
+        "encoding": {
+          "theta": {
+            "field": "amid",
+            "type": "quantitative",
+            "scale": null
+          },
+          "radius": {
+            "field": "percent",
+            "type": "quantitative",
+            "scale": {
+              "type": "sqrt",
+              "zero": true,
+              "domain": [
+                0,
+                60
+              ],
+              "range": [
+                0,
+                66
+              ]
+            }
+          },
+          "text": {
+            "field": "percent",
+            "type": "quantitative",
+            "format": ".0f"
+          }
+        }
+      }
+    ]
+  },
+  "resolve": {
+    "scale": {
+      "color": "shared"
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

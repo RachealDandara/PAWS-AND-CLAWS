@@ -1,0 +1,191 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Diverging stacked bars: how pet owners feel about adopting rescue pets",
+  "data": {
+    "url": "data/adoption_attitudes.csv"
+  },
+  "width": "container",
+  "height": {
+    "step": 62
+  },
+  "encoding": {
+    "y": {
+      "field": "statement",
+      "type": "nominal",
+      "sort": [
+        "Would adopt a rescue pet next time",
+        "No need to buy when shelters are full",
+        "Rescues are not riskier than bought pets"
+      ],
+      "axis": {
+        "title": null,
+        "labelLimit": 300,
+        "labelFontSize": 13,
+        "ticks": false,
+        "domain": false,
+        "labelPadding": 8
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "height": {
+          "band": 0.72
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "x0",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -42,
+              82
+            ]
+          },
+          "axis": null
+        },
+        "x2": {
+          "field": "x1"
+        },
+        "color": {
+          "field": "view",
+          "type": "nominal",
+          "sort": [
+            "Strongly against",
+            "Somewhat against",
+            "Neutral or might consider",
+            "Somewhat for",
+            "Strongly for"
+          ],
+          "scale": {
+            "domain": [
+              "Strongly against",
+              "Somewhat against",
+              "Neutral or might consider",
+              "Somewhat for",
+              "Strongly for"
+            ],
+            "range": [
+              "#b5483c",
+              "#e3a58f",
+              "#e6e0d3",
+              "#7fa592",
+              "#234B3A"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "top",
+            "symbolType": "square",
+            "labelFontSize": 12,
+            "columns": 3
+          }
+        },
+        "tooltip": [
+          {
+            "field": "statement",
+            "title": "Statement"
+          },
+          {
+            "field": "view",
+            "title": "View"
+          },
+          {
+            "field": "percent",
+            "title": "% of owners"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.percent >= 8"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {
+          "field": "mid",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "percent",
+          "type": "quantitative",
+          "format": ".0f"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.view == 'Neutral or might consider' || datum.view == 'Somewhat against'",
+            "value": "#2b2a26"
+          },
+          "value": "white"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.view == 'Strongly against'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -8,
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#b5483c"
+      },
+      "encoding": {
+        "x": {
+          "field": "left_end",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "net_against",
+          "type": "quantitative",
+          "format": ".0f"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.view == 'Strongly for'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#234B3A"
+      },
+      "encoding": {
+        "x": {
+          "field": "right_end",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "net_for",
+          "type": "quantitative",
+          "format": ".0f"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}
