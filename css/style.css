@@ -76,3 +76,26 @@ footer ul { padding-left: 1.2rem; max-width: 46rem; }
 .chapter-nav a { color:var(--accent); border:1px solid #d2b8c4; border-radius:99px; padding:.4rem .8rem; text-decoration:none; font-size:.9rem; }
 .chapter-nav a:hover, .chapter-nav a:focus-visible { background:var(--accent); color:#fff; }
 .story { scroll-margin-top:1rem; }
+
+/* ---------- Burgundy section theme ---------- */
+:root { --burgundy: #5E1F3A; --burgundy-2: #6E2744; }
+section.story { background: var(--burgundy); color: #fff; border-top: 0; }
+section.story:nth-of-type(even) { background: var(--burgundy-2); }
+section.story h2 { color: #fff; }
+section.story .text p, section.story .wrap > p { color: #fff; }
+section.story .text .src, section.story .wrap > .src { color: rgba(255,255,255,.82); }
+section.story .text a, section.story .wrap > .src a { color: #fff; }
+section.story a:focus-visible { outline-color: #fff; }
+section.story .text p.callout { background: var(--paper); color: var(--ink); border-left-color: var(--accent); }
+/* charts sit on cream cards so species colours stay readable */
+section.story figure { background: var(--paper); color: var(--ink); border-radius: 12px; padding: 1.25rem 1.4rem; margin-bottom: 1.5rem; }
+section.story figure:last-child { margin-bottom: 0; }
+section.story figure .src { color: var(--ink-soft); }
+section.story figure a { color: var(--accent); }
+section.story .facts dt { color: #fff; }
+section.story .facts dd { color: rgba(255,255,255,.88); }
+.cols .facts dt { color: #fff; }
+.map-grid figure { overflow-x: auto; }
+footer { background: var(--burgundy); color: #fff; border-top: 0; }
+footer h2 { color: #fff; }
+footer a { color: #fff; }

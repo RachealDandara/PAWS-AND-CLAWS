@@ -16,8 +16,8 @@
       "type": "nominal",
       "sort": [
         "Dogs\n$2,520",
-        "Small mammals\n$2,095",
         "Cats\n$1,656",
+        "Small mammals\n$2,095",
         "Reptiles\n$1,319",
         "Birds\n$555",
         "Fish\n$475"
@@ -40,18 +40,18 @@
         "Food",
         "Veterinary services",
         "Products or accessories",
+        "Competitions and memberships",
+        "Pet healthcare products",
         "Pet insurance",
         "Flea, worming and tick treatments",
         "Dietary supplements",
         "Clipping and grooming",
         "Training and behaviour",
-        "Competitions and memberships",
         "Veterinary medicines",
-        "Walking",
         "Alternative healthcare",
         "Boarding and minding",
         "Transport",
-        "Pet healthcare products"
+        "Walking"
       ],
       "axis": {
         "title": null,
@@ -61,6 +61,378 @@
     }
   },
   "layer": [
+    {
+      "data": {
+        "values": [
+          {
+            "pet_label": "Dogs\n$2,520",
+            "category": "Food"
+          },
+          {
+            "pet_label": "Dogs\n$2,520",
+            "category": "Veterinary services"
+          },
+          {
+            "pet_label": "Dogs\n$2,520",
+            "category": "Products or accessories"
+          },
+          {
+            "pet_label": "Dogs\n$2,520",
+            "category": "Competitions and memberships"
+          },
+          {
+            "pet_label": "Dogs\n$2,520",
+            "category": "Pet healthcare products"
+          },
+          {
+            "pet_label": "Dogs\n$2,520",
+            "category": "Pet insurance"
+          },
+          {
+            "pet_label": "Dogs\n$2,520",
+            "category": "Flea, worming and tick treatments"
+          },
+          {
+            "pet_label": "Dogs\n$2,520",
+            "category": "Dietary supplements"
+          },
+          {
+            "pet_label": "Dogs\n$2,520",
+            "category": "Clipping and grooming"
+          },
+          {
+            "pet_label": "Dogs\n$2,520",
+            "category": "Training and behaviour"
+          },
+          {
+            "pet_label": "Dogs\n$2,520",
+            "category": "Veterinary medicines"
+          },
+          {
+            "pet_label": "Dogs\n$2,520",
+            "category": "Alternative healthcare"
+          },
+          {
+            "pet_label": "Dogs\n$2,520",
+            "category": "Boarding and minding"
+          },
+          {
+            "pet_label": "Dogs\n$2,520",
+            "category": "Transport"
+          },
+          {
+            "pet_label": "Dogs\n$2,520",
+            "category": "Walking"
+          },
+          {
+            "pet_label": "Cats\n$1,656",
+            "category": "Food"
+          },
+          {
+            "pet_label": "Cats\n$1,656",
+            "category": "Veterinary services"
+          },
+          {
+            "pet_label": "Cats\n$1,656",
+            "category": "Products or accessories"
+          },
+          {
+            "pet_label": "Cats\n$1,656",
+            "category": "Competitions and memberships"
+          },
+          {
+            "pet_label": "Cats\n$1,656",
+            "category": "Pet healthcare products"
+          },
+          {
+            "pet_label": "Cats\n$1,656",
+            "category": "Pet insurance"
+          },
+          {
+            "pet_label": "Cats\n$1,656",
+            "category": "Flea, worming and tick treatments"
+          },
+          {
+            "pet_label": "Cats\n$1,656",
+            "category": "Dietary supplements"
+          },
+          {
+            "pet_label": "Cats\n$1,656",
+            "category": "Clipping and grooming"
+          },
+          {
+            "pet_label": "Cats\n$1,656",
+            "category": "Training and behaviour"
+          },
+          {
+            "pet_label": "Cats\n$1,656",
+            "category": "Veterinary medicines"
+          },
+          {
+            "pet_label": "Cats\n$1,656",
+            "category": "Alternative healthcare"
+          },
+          {
+            "pet_label": "Cats\n$1,656",
+            "category": "Boarding and minding"
+          },
+          {
+            "pet_label": "Cats\n$1,656",
+            "category": "Transport"
+          },
+          {
+            "pet_label": "Cats\n$1,656",
+            "category": "Walking"
+          },
+          {
+            "pet_label": "Small mammals\n$2,095",
+            "category": "Food"
+          },
+          {
+            "pet_label": "Small mammals\n$2,095",
+            "category": "Veterinary services"
+          },
+          {
+            "pet_label": "Small mammals\n$2,095",
+            "category": "Products or accessories"
+          },
+          {
+            "pet_label": "Small mammals\n$2,095",
+            "category": "Competitions and memberships"
+          },
+          {
+            "pet_label": "Small mammals\n$2,095",
+            "category": "Pet healthcare products"
+          },
+          {
+            "pet_label": "Small mammals\n$2,095",
+            "category": "Pet insurance"
+          },
+          {
+            "pet_label": "Small mammals\n$2,095",
+            "category": "Flea, worming and tick treatments"
+          },
+          {
+            "pet_label": "Small mammals\n$2,095",
+            "category": "Dietary supplements"
+          },
+          {
+            "pet_label": "Small mammals\n$2,095",
+            "category": "Clipping and grooming"
+          },
+          {
+            "pet_label": "Small mammals\n$2,095",
+            "category": "Training and behaviour"
+          },
+          {
+            "pet_label": "Small mammals\n$2,095",
+            "category": "Veterinary medicines"
+          },
+          {
+            "pet_label": "Small mammals\n$2,095",
+            "category": "Alternative healthcare"
+          },
+          {
+            "pet_label": "Small mammals\n$2,095",
+            "category": "Boarding and minding"
+          },
+          {
+            "pet_label": "Small mammals\n$2,095",
+            "category": "Transport"
+          },
+          {
+            "pet_label": "Small mammals\n$2,095",
+            "category": "Walking"
+          },
+          {
+            "pet_label": "Reptiles\n$1,319",
+            "category": "Food"
+          },
+          {
+            "pet_label": "Reptiles\n$1,319",
+            "category": "Veterinary services"
+          },
+          {
+            "pet_label": "Reptiles\n$1,319",
+            "category": "Products or accessories"
+          },
+          {
+            "pet_label": "Reptiles\n$1,319",
+            "category": "Competitions and memberships"
+          },
+          {
+            "pet_label": "Reptiles\n$1,319",
+            "category": "Pet healthcare products"
+          },
+          {
+            "pet_label": "Reptiles\n$1,319",
+            "category": "Pet insurance"
+          },
+          {
+            "pet_label": "Reptiles\n$1,319",
+            "category": "Flea, worming and tick treatments"
+          },
+          {
+            "pet_label": "Reptiles\n$1,319",
+            "category": "Dietary supplements"
+          },
+          {
+            "pet_label": "Reptiles\n$1,319",
+            "category": "Clipping and grooming"
+          },
+          {
+            "pet_label": "Reptiles\n$1,319",
+            "category": "Training and behaviour"
+          },
+          {
+            "pet_label": "Reptiles\n$1,319",
+            "category": "Veterinary medicines"
+          },
+          {
+            "pet_label": "Reptiles\n$1,319",
+            "category": "Alternative healthcare"
+          },
+          {
+            "pet_label": "Reptiles\n$1,319",
+            "category": "Boarding and minding"
+          },
+          {
+            "pet_label": "Reptiles\n$1,319",
+            "category": "Transport"
+          },
+          {
+            "pet_label": "Reptiles\n$1,319",
+            "category": "Walking"
+          },
+          {
+            "pet_label": "Birds\n$555",
+            "category": "Food"
+          },
+          {
+            "pet_label": "Birds\n$555",
+            "category": "Veterinary services"
+          },
+          {
+            "pet_label": "Birds\n$555",
+            "category": "Products or accessories"
+          },
+          {
+            "pet_label": "Birds\n$555",
+            "category": "Competitions and memberships"
+          },
+          {
+            "pet_label": "Birds\n$555",
+            "category": "Pet healthcare products"
+          },
+          {
+            "pet_label": "Birds\n$555",
+            "category": "Pet insurance"
+          },
+          {
+            "pet_label": "Birds\n$555",
+            "category": "Flea, worming and tick treatments"
+          },
+          {
+            "pet_label": "Birds\n$555",
+            "category": "Dietary supplements"
+          },
+          {
+            "pet_label": "Birds\n$555",
+            "category": "Clipping and grooming"
+          },
+          {
+            "pet_label": "Birds\n$555",
+            "category": "Training and behaviour"
+          },
+          {
+            "pet_label": "Birds\n$555",
+            "category": "Veterinary medicines"
+          },
+          {
+            "pet_label": "Birds\n$555",
+            "category": "Alternative healthcare"
+          },
+          {
+            "pet_label": "Birds\n$555",
+            "category": "Boarding and minding"
+          },
+          {
+            "pet_label": "Birds\n$555",
+            "category": "Transport"
+          },
+          {
+            "pet_label": "Birds\n$555",
+            "category": "Walking"
+          },
+          {
+            "pet_label": "Fish\n$475",
+            "category": "Food"
+          },
+          {
+            "pet_label": "Fish\n$475",
+            "category": "Veterinary services"
+          },
+          {
+            "pet_label": "Fish\n$475",
+            "category": "Products or accessories"
+          },
+          {
+            "pet_label": "Fish\n$475",
+            "category": "Competitions and memberships"
+          },
+          {
+            "pet_label": "Fish\n$475",
+            "category": "Pet healthcare products"
+          },
+          {
+            "pet_label": "Fish\n$475",
+            "category": "Pet insurance"
+          },
+          {
+            "pet_label": "Fish\n$475",
+            "category": "Flea, worming and tick treatments"
+          },
+          {
+            "pet_label": "Fish\n$475",
+            "category": "Dietary supplements"
+          },
+          {
+            "pet_label": "Fish\n$475",
+            "category": "Clipping and grooming"
+          },
+          {
+            "pet_label": "Fish\n$475",
+            "category": "Training and behaviour"
+          },
+          {
+            "pet_label": "Fish\n$475",
+            "category": "Veterinary medicines"
+          },
+          {
+            "pet_label": "Fish\n$475",
+            "category": "Alternative healthcare"
+          },
+          {
+            "pet_label": "Fish\n$475",
+            "category": "Boarding and minding"
+          },
+          {
+            "pet_label": "Fish\n$475",
+            "category": "Transport"
+          },
+          {
+            "pet_label": "Fish\n$475",
+            "category": "Walking"
+          }
+        ]
+      },
+      "mark": {
+        "type": "rect",
+        "stroke": "#FAF7F2",
+        "strokeWidth": 2,
+        "fill": "#DDD7CE"
+      }
+    },
     {
       "mark": {
         "type": "rect",
@@ -83,10 +455,19 @@
             ]
           },
           "legend": {
-            "title": "Dollars a year",
+            "title": "Dollars a year (grey = not asked)",
             "orient": "bottom",
             "direction": "horizontal",
-            "gradientLength": 260
+            "gradientLength": 300,
+            "values": [
+              0,
+              100,
+              300,
+              600,
+              1000
+            ],
+            "format": "$,.0f",
+            "titleLimit": 0
           }
         }
       }
