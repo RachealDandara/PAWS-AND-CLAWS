@@ -187,3 +187,26 @@ footer a { color:#FFE0A2; }
 }
 /* Keep scroll rather than crop on narrow viewports. */
 #motivations figure, #spending figure { overflow-x: auto; }
+
+/* V6: Hero unit-chart key is white on the chocolate background.
+   Vega-Lite legend labelColor is explicitly set in vis/pets_unit_chart.json. */
+
+/* V7: Center the rendered heatmap SVG itself, not merely its full-width wrapper. */
+#spending .chart[data-spec="spend_heatmap"] {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  overflow-x: auto;
+}
+#spending .chart[data-spec="spend_heatmap"] > .vega-embed {
+  display: block !important;
+  width: max-content !important;
+  max-width: none !important;
+  flex: 0 0 auto;
+  margin-inline: auto;
+}
+#spending .chart[data-spec="spend_heatmap"] > .vega-embed > svg {
+  display: block;
+  max-width: none;
+}

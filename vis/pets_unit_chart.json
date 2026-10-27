@@ -60,8 +60,12 @@
         "orient": "bottom",
         "columns": 4,
         "symbolType": "square",
-        "labelFontSize": 13,
-        "labelLimit": 0
+        "labelFontSize": 14,
+        "labelLimit": 0,
+        "labelColor": "#FFF9F2",
+        "symbolStrokeColor": "#C9B5A7",
+        "symbolStrokeWidth": 0.8,
+        "labelPadding": 6
       }
     }
   }
