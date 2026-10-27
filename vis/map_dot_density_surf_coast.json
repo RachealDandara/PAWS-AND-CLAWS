@@ -27,8 +27,8 @@
       },
       "mark": {
         "type": "geoshape",
-        "fill": "#F2EEE7",
-        "stroke": "#9CA89D",
+        "fill": "#F4EEE7",
+        "stroke": "#A89482",
         "strokeWidth": 0.8
       },
       "transform": [
@@ -67,8 +67,8 @@
               "Dog"
             ],
             "range": [
-              "#C76B4E",
-              "#234B3A"
+              "#A64E32",
+              "#6B4433"
             ]
           },
           "title": [

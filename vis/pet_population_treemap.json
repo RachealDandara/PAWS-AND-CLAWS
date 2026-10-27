@@ -22,21 +22,21 @@
           "id": "Fish",
           "parent": "Pets",
           "value": 12138.9,
-          "fill": "#3F7C8C",
+          "fill": "#A77A51",
           "millions": 12.14
         },
         {
           "id": "Dogs",
           "parent": "Pets",
           "value": 7367.3,
-          "fill": "#C76B4E",
+          "fill": "#A64E32",
           "millions": 7.37
         },
         {
           "id": "Cats",
           "parent": "Pets",
           "value": 5834.7,
-          "fill": "#234B3A",
+          "fill": "#6B4433",
           "millions": 5.83
         },
         {
@@ -50,21 +50,21 @@
           "id": "Small mammals",
           "parent": "Pets",
           "value": 769.5,
-          "fill": "#8a6f4d",
+          "fill": "#C48A38",
           "millions": 0.77
         },
         {
           "id": "Other pets",
           "parent": "Pets",
           "value": 571.8,
-          "fill": "#B9B2A4",
+          "fill": "#C4AD99",
           "millions": 0.57
         },
         {
           "id": "Reptiles",
           "parent": "Pets",
           "value": 511.9,
-          "fill": "#A8B89A",
+          "fill": "#F0C56B",
           "millions": 0.51
         }
       ],
@@ -177,7 +177,7 @@
             "field": "id"
           },
           "fill": {
-            "signal": "datum.id == 'Birds' ? '#2b2a26' : '#fff'"
+            "signal": "datum.id == 'Birds' ? '#242B37' : '#fff'"
           },
           "font": {
             "value": "Public Sans, Arial, sans-serif"
@@ -216,7 +216,7 @@
             "signal": "format(datum.value / 1000, '.2f') + 'm'"
           },
           "fill": {
-            "signal": "datum.id == 'Birds' ? '#2b2a26' : '#fff'"
+            "signal": "datum.id == 'Birds' ? '#242B37' : '#fff'"
           },
           "font": {
             "value": "Public Sans, Arial, sans-serif"

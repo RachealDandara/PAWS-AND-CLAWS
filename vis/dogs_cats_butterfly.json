@@ -72,7 +72,7 @@
               50,
               100
             ],
-            "gridColor": "#e8e2d6"
+            "gridColor": "#E5E1DA"
           }
         },
         "color": {
@@ -84,8 +84,8 @@
               "Cats"
             ],
             "range": [
-              "#C76B4E",
-              "#234B3A"
+              "#A64E32",
+              "#6B4433"
             ]
           },
           "legend": {

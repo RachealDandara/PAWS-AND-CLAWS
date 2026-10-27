@@ -63,8 +63,8 @@
               "Below average"
             ],
             "range": [
-              "#7A2E4D",
-              "#B9B2A4"
+              "#A64E32",
+              "#C4AD99"
             ]
           },
           "legend": {
@@ -97,7 +97,7 @@
         "dx": 5,
         "fontSize": 12,
         "fontWeight": "bold",
-        "color": "#2b2a26"
+        "color": "#242B37"
       },
       "encoding": {
         "y": {
@@ -141,7 +141,7 @@
           4,
           3
         ],
-        "color": "#2b2a26",
+        "color": "#242B37",
         "strokeWidth": 1.5
       },
       "encoding": {
@@ -168,7 +168,7 @@
         "dy": -4,
         "fontSize": 12,
         "fontStyle": "italic",
-        "color": "#5b574d"
+        "color": "#4E596B"
       },
       "encoding": {
         "x": {

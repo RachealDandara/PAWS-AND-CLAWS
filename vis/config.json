@@ -1,10 +1,25 @@
 {
   "font": "Public Sans",
   "background": null,
-  "view": {"stroke": null},
-  "axis": {"labelFontSize": 12, "titleFontSize": 12, "titleFontWeight": "normal",
-           "labelColor": "#2b2a26", "titleColor": "#5b574d", "domain": false,
-           "gridColor": "#e8e2d6", "tickColor": "#e8e2d6"},
-  "legend": {"labelFontSize": 12, "titleFontSize": 12, "labelColor": "#2b2a26"},
-  "text": {"font": "Public Sans"}
+  "view": {
+    "stroke": null
+  },
+  "axis": {
+    "labelFontSize": 12,
+    "titleFontSize": 12,
+    "titleFontWeight": "normal",
+    "labelColor": "#34251E",
+    "titleColor": "#66584D",
+    "domain": false,
+    "gridColor": "#EAE1D7",
+    "tickColor": "#EAE1D7"
+  },
+  "legend": {
+    "labelFontSize": 12,
+    "titleFontSize": 12,
+    "labelColor": "#34251E"
+  },
+  "text": {
+    "font": "Public Sans"
+  }
 }

@@ -95,11 +95,11 @@
                 "Strongly for"
               ],
               "range": [
-                "#6B6254",
-                "#B5AB99",
-                "#E6E0D3",
-                "#C48CA0",
-                "#7A2E4D"
+                "#6B4433",
+                "#BE9067",
+                "#EEE1D5",
+                "#C77B58",
+                "#A64E32"
               ]
             },
             "legend": {
@@ -134,7 +134,7 @@
           "dy": -6,
           "fontSize": 12,
           "fontWeight": "bold",
-          "color": "#2b2a26"
+          "color": "#242B37"
         },
         "encoding": {
           "text": {

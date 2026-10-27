@@ -66,7 +66,7 @@
           "axis": {
             "title": "Billions of dollars a year",
             "format": "$.0f",
-            "gridColor": "#e8e2d6",
+            "gridColor": "#E5E1DA",
             "tickCount": 6
           }
         },
@@ -88,9 +88,9 @@
               "All other pets"
             ],
             "range": [
-              "#C76B4E",
-              "#234B3A",
-              "#B9B2A4"
+              "#A64E32",
+              "#6B4433",
+              "#C4AD99"
             ]
           },
           "legend": {
@@ -136,7 +136,7 @@
         "dx": 8,
         "fontSize": 15,
         "fontWeight": "bold",
-        "color": "#2b2a26"
+        "color": "#242B37"
       },
       "encoding": {
         "x": {

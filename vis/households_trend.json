@@ -10,7 +10,7 @@
     {
       "mark": {
         "type": "line",
-        "color": "#2b2a26",
+        "color": "#242B37",
         "strokeWidth": 3
       }
     },
@@ -18,7 +18,7 @@
       "mark": {
         "type": "point",
         "filled": true,
-        "color": "#2b2a26",
+        "color": "#242B37",
         "size": 110,
         "opacity": 1
       }
@@ -29,7 +29,7 @@
         "dy": -16,
         "fontSize": 15,
         "fontWeight": "bold",
-        "color": "#2b2a26"
+        "color": "#242B37"
       },
       "encoding": {
         "text": {
@@ -44,7 +44,7 @@
         "type": "text",
         "dy": 24,
         "fontSize": 12,
-        "color": "#5b574d"
+        "color": "#4E596B"
       },
       "transform": [
         {
@@ -74,7 +74,7 @@
         "align": "center",
         "fontSize": 12,
         "fontStyle": "italic",
-        "color": "#5b574d"
+        "color": "#4E596B"
       },
       "encoding": {
         "text": {
@@ -128,7 +128,7 @@
     "fontSize": 12,
     "fontWeight": "normal",
     "fontStyle": "italic",
-    "color": "#5b574d",
+    "color": "#4E596B",
     "offset": 10
   }
 }

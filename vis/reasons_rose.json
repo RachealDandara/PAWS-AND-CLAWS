@@ -122,13 +122,13 @@
                 "Good temperament"
               ],
               "range": [
-                "#7A2E4D",
-                "#C48CA0",
-                "#5B6F94",
-                "#A9B6CE",
-                "#8F8472",
-                "#D9B8A6",
-                "#CFC8B8"
+                "#A64E32",
+                "#C77B58",
+                "#6B4433",
+                "#BE9067",
+                "#D9A441",
+                "#F0C56B",
+                "#C4AD99"
               ]
             },
             "legend": {
@@ -161,7 +161,7 @@
           "radiusOffset": 9,
           "fontSize": 12,
           "fontWeight": "bold",
-          "color": "#2b2a26"
+          "color": "#242B37"
         },
         "encoding": {
           "theta": {

@@ -13,7 +13,7 @@
       "mark": {
         "type": "rule",
         "strokeWidth": 4,
-        "color": "#e2dccf"
+        "color": "#E5E1DA"
       },
       "encoding": {
         "y": {
@@ -43,7 +43,7 @@
           "axis": {
             "title": "Pet owners who have done this (%)",
             "grid": true,
-            "gridColor": "#e8e2d6",
+            "gridColor": "#E5E1DA",
             "tickCount": 6
           }
         },
@@ -99,8 +99,8 @@
               "2025"
             ],
             "range": [
-              "#C9A3B3",
-              "#7A2E4D"
+              "#C77B58",
+              "#A64E32"
             ]
           },
           "legend": {
@@ -131,7 +131,7 @@
         "align": "right",
         "dx": -11,
         "fontSize": 12,
-        "color": "#2b2a26"
+        "color": "#242B37"
       },
       "encoding": {
         "y": {
@@ -179,7 +179,7 @@
         "align": "left",
         "dx": 11,
         "fontSize": 12,
-        "color": "#2b2a26"
+        "color": "#242B37"
       },
       "encoding": {
         "y": {

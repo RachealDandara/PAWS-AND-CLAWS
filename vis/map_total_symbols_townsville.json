@@ -27,8 +27,8 @@
       },
       "mark": {
         "type": "geoshape",
-        "fill": "#F2EEE7",
-        "stroke": "#9CA89D",
+        "fill": "#F4EEE7",
+        "stroke": "#A89482",
         "strokeWidth": 0.8
       },
       "transform": [
@@ -76,7 +76,7 @@
           "legend": null
         },
         "color": {
-          "value": "#7A2E4D"
+          "value": "#A64E32"
         },
         "tooltip": [
           {

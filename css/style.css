@@ -1,14 +1,14 @@
 :root {
   --paper: #FAF7F2;
-  --ink: #2b2a26;
-  --ink-soft: #5b574d;
-  --rule: #e2dccf;
-  --dog: #C76B4E;
-  --cat: #234B3A;
-  --fish: #3F7C8C;
-  --bird: #D9A441;
-  --accent: #7A2E4D;
-  --teal: #234B3A;
+  --ink: #242B37;
+  --ink-soft: #4E596B;
+  --rule: #E5E1DA;
+  --dog: #6B2345;
+  --cat: #203A5E;
+  --fish: #46698F;
+  --bird: #D5A638;
+  --accent: #6B2345;
+  --teal: #203A5E;
   --measure: 36rem;
 }
 * { box-sizing: border-box; }
@@ -73,12 +73,12 @@ footer ul { padding-left: 1.2rem; max-width: 46rem; }
 
 /* Story chapter navigation */
 .chapter-nav { display:flex; flex-wrap:wrap; gap:.55rem; padding-top:1.1rem; padding-bottom:1.1rem; }
-.chapter-nav a { color:var(--accent); border:1px solid #d2b8c4; border-radius:99px; padding:.4rem .8rem; text-decoration:none; font-size:.9rem; }
+.chapter-nav a { color:var(--accent); border:1px solid #C9A4B4; border-radius:99px; padding:.4rem .8rem; text-decoration:none; font-size:.9rem; }
 .chapter-nav a:hover, .chapter-nav a:focus-visible { background:var(--accent); color:#fff; }
 .story { scroll-margin-top:1rem; }
 
-/* ---------- Burgundy section theme ---------- */
-:root { --burgundy: #5E1F3A; --burgundy-2: #6E2744; }
+/* ---------- Three-colour theme: burgundy / navy / muted gold ---------- */
+:root { --burgundy: #6B2345; --burgundy-2: #5B1D3A; }
 section.story { background: var(--burgundy); color: #fff; border-top: 0; }
 section.story:nth-of-type(even) { background: var(--burgundy-2); }
 section.story h2 { color: #fff; }
@@ -133,3 +133,41 @@ footer a { color: #fff; }
 @media (max-width: 700px) {
   #motivations figure, #spending figure { padding: 1rem; }
 }
+
+/* Consistent brand accents: neutrals are used only for text/backgrounds. */
+:root { --burgundy: #6B2345; --burgundy-2: #5B1D3A; --navy: #203A5E; --gold: #D5A638; }
+.chapter-nav a:hover, .chapter-nav a:focus-visible { background:var(--navy); }
+.hero-chart .note { border-left-color:var(--gold); }
+section.story .text p.callout { border-left-color:var(--gold); }
+
+/* V4: chocolate / terracotta / honey design system.
+   White chart cards preserve readability; all prior layout fixes remain. */
+:root {
+  --paper:#FFFDF9; --ink:#34251E; --ink-soft:#66584D; --rule:#745446;
+  --dog:#A64E32; --cat:#6B4433; --fish:#A77A51; --bird:#D9A441;
+  --accent:#C77B58; --teal:#6B4433;
+  --chocolate:#302019; --chocolate-alt:#3C291F;
+  --terracotta:#C66B47; --honey:#E8B967;
+}
+body { background:var(--chocolate); color:#FFF9F2; }
+.hero { color:#FFF9F2; }
+.hero .lede, .hero .facts dd { color:#E4D4C7; }
+.hero .facts { border-color:#715346; }
+.hero .hero-chart .note { border-left-color:var(--honey); }
+.hero .hero-chart .note strong { color:var(--honey); }
+.hero a, .chapter-nav a { color:#FFE0A2; }
+.chapter-nav a { border-color:#9A7967; }
+.chapter-nav a:hover, .chapter-nav a:focus-visible { background:var(--terracotta); color:white; }
+section.story { background:var(--chocolate); color:#FFF9F2; border-top:1px solid #65483A; }
+section.story:nth-of-type(even) { background:var(--chocolate-alt); }
+section.story h2, section.story .text p, section.story .wrap > p { color:#FFF9F2; }
+section.story .text .src, section.story .wrap > .src { color:#E4D4C7; }
+section.story .text p.callout { background:#FFFDF9; color:#34251E; border-left-color:var(--terracotta); }
+section.story figure { background:#FFFDF9; color:#34251E; border:1px solid #E9DCD0; box-shadow:0 6px 22px rgba(10,4,2,.12); }
+section.story figure .src { color:#66584D; }
+section.story figure a { color:#9A472F; }
+section.story .facts dt { color:var(--honey); }
+section.story .facts dd { color:#E4D4C7; }
+footer { background:var(--chocolate); color:#E4D4C7; border-top:1px solid #65483A; }
+footer h2 { color:#FFF9F2; }
+footer a { color:#FFE0A2; }

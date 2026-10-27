@@ -431,7 +431,7 @@
         "type": "rect",
         "stroke": "#FAF7F2",
         "strokeWidth": 2,
-        "fill": "#E6E2DB"
+        "fill": "#EAE1D7"
       }
     },
     {
@@ -451,8 +451,8 @@
               1100
             ],
             "range": [
-              "#F4E5EB",
-              "#7A2E4D"
+              "#F7E6D8",
+              "#A64E32"
             ]
           },
           "legend": {
@@ -489,7 +489,7 @@
             "test": "datum.dollars > 380",
             "value": "white"
           },
-          "value": "#2b2a26"
+          "value": "#242B37"
         }
       }
     }
