@@ -20,7 +20,9 @@
   "mark": {
     "type": "square",
     "size": 380,
-    "opacity": 1
+    "opacity": 1,
+    "stroke": "#A18A7C",
+    "strokeWidth": 0.45
   },
   "encoding": {
     "x": {
@@ -44,7 +46,7 @@
       },
       "scale": {
         "range": [
-          "#6B4433",
+          "#FFFDF9",
           "#A64E32",
           "#A16B4D",
           "#D9A441",

@@ -171,3 +171,19 @@ section.story .facts dd { color:#E4D4C7; }
 footer { background:var(--chocolate); color:#E4D4C7; border-top:1px solid #65483A; }
 footer h2 { color:#FFF9F2; }
 footer a { color:#FFE0A2; }
+
+/* V5: improve hero key contrast and center the two wide visualisations. */
+.hero-chart .chart .vega-embed svg text { fill: #FFF9F2 !important; }
+#motivations .chart .vega-embed,
+#spending .chart[data-spec="spend_heatmap"] .vega-embed {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#motivations .chart .vega-embed > svg,
+#spending .chart[data-spec="spend_heatmap"] .vega-embed > svg {
+  flex: 0 0 auto;
+  max-width: none;
+}
+/* Keep scroll rather than crop on narrow viewports. */
+#motivations figure, #spending figure { overflow-x: auto; }
