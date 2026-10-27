@@ -5,10 +5,10 @@
     "url": "data/spend_by_category.csv"
   },
   "width": {
-    "step": 84
+    "step": 66
   },
   "height": {
-    "step": 27
+    "step": 28
   },
   "encoding": {
     "x": {
@@ -26,9 +26,9 @@
         "orient": "top",
         "title": null,
         "labelAngle": 0,
-        "labelFontSize": 12,
+        "labelFontSize": 11,
         "labelLineHeight": 15,
-        "labelPadding": 26,
+        "labelPadding": 15,
         "ticks": false,
         "labelExpr": "split(datum.label, '\\n')"
       }
@@ -55,8 +55,9 @@
       ],
       "axis": {
         "title": null,
-        "labelLimit": 240,
-        "ticks": false
+        "labelLimit": 215,
+        "ticks": false,
+        "labelFontSize": 11
       }
     }
   },
@@ -430,7 +431,7 @@
         "type": "rect",
         "stroke": "#FAF7F2",
         "strokeWidth": 2,
-        "fill": "#DDD7CE"
+        "fill": "#E6E2DB"
       }
     },
     {
@@ -450,7 +451,7 @@
               1100
             ],
             "range": [
-              "#EBD6DE",
+              "#F4E5EB",
               "#7A2E4D"
             ]
           },
@@ -458,7 +459,7 @@
             "title": "Dollars a year (grey = not asked)",
             "orient": "bottom",
             "direction": "horizontal",
-            "gradientLength": 300,
+            "gradientLength": 235,
             "values": [
               0,
               100,
@@ -475,7 +476,7 @@
     {
       "mark": {
         "type": "text",
-        "fontSize": 11
+        "fontSize": 10
       },
       "encoding": {
         "text": {

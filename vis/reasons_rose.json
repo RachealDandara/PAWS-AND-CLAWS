@@ -38,7 +38,7 @@
       "as": "a0"
     },
     {
-      "calculate": "datum.a0 + 2 * PI / datum.n * 0.96",
+      "calculate": "datum.a0 + 2 * PI / datum.n",
       "as": "a1"
     },
     {
@@ -47,27 +47,25 @@
     }
   ],
   "facet": {
-    "column": {
-      "field": "pet",
-      "type": "nominal",
-      "sort": [
-        "Dogs",
-        "Cats",
-        "Small mammals",
-        "Birds",
-        "Fish",
-        "Reptiles"
-      ],
-      "header": {
-        "title": null,
-        "labelFontSize": 15,
-        "labelFontWeight": "bold",
-        "labelPadding": 4
-      }
+    "field": "pet",
+    "type": "nominal",
+    "sort": [
+      "Dogs",
+      "Cats",
+      "Small mammals",
+      "Birds",
+      "Fish",
+      "Reptiles"
+    ],
+    "header": {
+      "title": null,
+      "labelFontSize": 15,
+      "labelFontWeight": "bold",
+      "labelPadding": 7
     }
   },
   "spec": {
-    "width": 150,
+    "width": 174,
     "height": 150,
     "layer": [
       {
@@ -97,7 +95,7 @@
               ],
               "range": [
                 0,
-                66
+                65
               ]
             }
           },
@@ -136,9 +134,9 @@
             "legend": {
               "title": null,
               "orient": "bottom",
-              "columns": 4,
+              "columns": 3,
               "symbolType": "square",
-              "labelFontSize": 13
+              "labelFontSize": 12
             }
           },
           "tooltip": [
@@ -183,7 +181,7 @@
               ],
               "range": [
                 0,
-                66
+                65
               ]
             }
           },
@@ -205,5 +203,6 @@
     "view": {
       "stroke": null
     }
-  }
+  },
+  "columns": 3
 }
