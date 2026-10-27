@@ -99,5 +99,37 @@ section.story .facts dd { color: rgba(255,255,255,.88); }
 footer { background: var(--burgundy); color: #fff; border-top: 0; }
 footer h2 { color: #fff; }
 footer a { color: #fff; }
-section.story figure { overflow-x: auto; }
-section.story figure .chart { max-width: 100%; }
+
+
+/* LAYOUT FIX v2 — give the wide charts the full content width. */
+#motivations .cols, #spending .cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+}
+#motivations .cols .text, #spending .cols .text {
+  position: static;
+}
+#motivations .cols .text h2, #spending .cols .text h2 {
+  max-width: 24ch;
+}
+#motivations .cols .text p, #spending .cols .text p {
+  max-width: 75ch;
+}
+#motivations figure, #spending figure {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 1.5rem 1.75rem;
+}
+#motivations .chart, #spending .chart {
+  width: 100%;
+  min-width: 0;
+}
+#motivations .vega-embed, #spending .vega-embed {
+  max-width: 100%;
+}
+@media (max-width: 700px) {
+  #motivations figure, #spending figure { padding: 1rem; }
+}

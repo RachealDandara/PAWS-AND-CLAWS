@@ -38,7 +38,7 @@
       "as": "a0"
     },
     {
-      "calculate": "datum.a0 + 2 * PI / datum.n * 0.96",
+      "calculate": "datum.a0 + 2 * PI / datum.n",
       "as": "a1"
     },
     {
@@ -61,12 +61,12 @@
       "title": null,
       "labelFontSize": 15,
       "labelFontWeight": "bold",
-      "labelPadding": 4
+      "labelPadding": 7
     }
   },
   "spec": {
-    "width": 190,
-    "height": 190,
+    "width": 174,
+    "height": 150,
     "layer": [
       {
         "mark": {
@@ -95,7 +95,7 @@
               ],
               "range": [
                 0,
-                66
+                65
               ]
             }
           },
@@ -134,9 +134,9 @@
             "legend": {
               "title": null,
               "orient": "bottom",
-              "columns": 4,
+              "columns": 3,
               "symbolType": "square",
-              "labelFontSize": 13
+              "labelFontSize": 12
             }
           },
           "tooltip": [
@@ -181,7 +181,7 @@
               ],
               "range": [
                 0,
-                66
+                65
               ]
             }
           },
@@ -204,6 +204,5 @@
       "stroke": null
     }
   },
-  "columns": 3,
-  "spacing": 14
+  "columns": 3
 }
