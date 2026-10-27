@@ -1,8 +1,0 @@
-Paws & Claws v7 changes (21 October 2026)
-- Reordered sections: introduction, national trend, pet types, demographics, motivations, adoption, council geography, spending, pet care, conclusion.
-- Moved existing dog/cat trend into pet-type section without changing its underlying data.
-- Added a Vega treemap of 2025 estimated individual pet counts (AMA report PDF page 10).
-- Added chapter navigation.
-- Preserved existing map charts and limitations; no unsupported state ownership map, chord diagram, or age-by-gender pyramid.
-- Existing Vega-Lite specs and datasets otherwise unchanged.
-- Open using a local HTTP server or GitHub Pages, not file://, so data files can load.
