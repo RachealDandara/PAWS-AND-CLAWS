@@ -1,0 +1,17 @@
+Paws & Claws v8 changes
+- Hero unit chart: each pet type now starts on its own row, ordered Fish, Dogs, Cats, Birds, then the small groups.
+- Homes-with-a-pet line chart: note at the top says the y-axis starts at 50%, not 0.
+- Who owns pets: diverging chart replaced by horizontal bars from zero, with the 73% average as a dashed line.
+- Rose chart: each pet's wedges now fill the full circle (no empty gaps), largest first.
+- Adoption attitudes: diverging stacked bars replaced by three side-by-side bar panels (one per statement).
+- Spending heatmap: lowest values now a visible pale green so they differ from blank cells.
+- Maps: the three council maps in each row now sit side by side (scrolls sideways on narrow screens).
+- Colour theme unified. Species colours are used ONLY for species: Dogs terracotta, Cats deep green, Fish teal-blue, Birds gold, Small mammals brown, Reptiles sage, Other grey (unit chart, treemap, trend lines, butterfly, spend totals, dot-density maps).
+- Everything that is not a species uses a plum accent (#7A2E4D) with tints and neutrals: who-owns bars, adoption panels, rose reasons, spending heatmap, pet-parenting dumbbells, adoption waffle, proportional-symbol maps, nav chips, callouts. The cat-share choropleth uses a cat-green ramp.
+- Fixed: the treemap in v7 did not load (Vega does not allow filters inside marks). Filters moved to derived datasets.
+- Unit chart now flows continuously (no empty tiles between pet types), still ordered Fish, Dogs, Cats, Birds, small groups.
+- Heatmap: columns reordered (Dogs, Cats, then small mammals, reptiles, birds, fish) and rows regrouped so missing cells form one block; missing cells are now grey tiles instead of blank.
+- Page: every section now has a burgundy background with white headings and text; charts sit on cream cards. Footer is burgundy too.
+- Rose chart: now a 3 x 2 grid so all six pets fit inside the card (Fish no longer spills out).
+- Heatmap: now scales to the width of its card instead of using a fixed size.
+- Chart cards scroll sideways instead of letting charts spill outside on very narrow screens.

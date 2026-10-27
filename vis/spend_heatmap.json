@@ -4,11 +4,9 @@
   "data": {
     "url": "data/spend_by_category.csv"
   },
-  "width": {
-    "step": 66
-  },
+  "width": "container",
   "height": {
-    "step": 28
+    "step": 27
   },
   "encoding": {
     "x": {
@@ -26,9 +24,9 @@
         "orient": "top",
         "title": null,
         "labelAngle": 0,
-        "labelFontSize": 11,
+        "labelFontSize": 12,
         "labelLineHeight": 15,
-        "labelPadding": 15,
+        "labelPadding": 26,
         "ticks": false,
         "labelExpr": "split(datum.label, '\\n')"
       }
@@ -55,9 +53,8 @@
       ],
       "axis": {
         "title": null,
-        "labelLimit": 215,
-        "ticks": false,
-        "labelFontSize": 11
+        "labelLimit": 240,
+        "ticks": false
       }
     }
   },
@@ -431,7 +428,7 @@
         "type": "rect",
         "stroke": "#FAF7F2",
         "strokeWidth": 2,
-        "fill": "#E6E2DB"
+        "fill": "#DDD7CE"
       }
     },
     {
@@ -451,7 +448,7 @@
               1100
             ],
             "range": [
-              "#F4E5EB",
+              "#EBD6DE",
               "#7A2E4D"
             ]
           },
@@ -459,7 +456,7 @@
             "title": "Dollars a year (grey = not asked)",
             "orient": "bottom",
             "direction": "horizontal",
-            "gradientLength": 235,
+            "gradientLength": 300,
             "values": [
               0,
               100,
@@ -476,7 +473,7 @@
     {
       "mark": {
         "type": "text",
-        "fontSize": 10
+        "fontSize": 11
       },
       "encoding": {
         "text": {
@@ -498,5 +495,9 @@
     "view": {
       "stroke": null
     }
+  },
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
   }
 }

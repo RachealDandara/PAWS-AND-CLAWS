@@ -99,3 +99,5 @@ section.story .facts dd { color: rgba(255,255,255,.88); }
 footer { background: var(--burgundy); color: #fff; border-top: 0; }
 footer h2 { color: #fff; }
 footer a { color: #fff; }
+section.story figure { overflow-x: auto; }
+section.story figure .chart { max-width: 100%; }
